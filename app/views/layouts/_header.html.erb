@@ -1,0 +1,42 @@
+<header>
+  <div class="header-logo">
+    <%= link_to image_tag("pote_share_logo.png", class:"header-logo" ), root_path %>  
+  </div>
+
+  <div class="header-forms-area">
+    <div class="header-search">
+      <i class="fas fa-map-marker-alt"></i>
+      <input type="text" class="search-form" placeholder="エリア">
+    </div>
+  </div>
+  <div class="header-forms-keyword">
+    <div class="header-search">
+      <i class="fas fa-search"></i>
+      <input type="text" class="search-form" placeholder="キーワード">
+    </div>
+  </div>
+
+  <div class="header-right">
+    <% if user_signed_in? %>
+      <li class="login-user-name"><%= current_user.name %></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="user-icon fas fa-user-circle"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><%= link_to "プロフィール", "#" %></li>
+          <li><%= link_to "設定", '#' %></li>
+          <li class="divider"></li>
+          <li>
+             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      </li>
+    <% else %>
+
+      <li><%= link_to "ログイン", new_user_session_path, class:"link"%></li>
+      <li><%= link_to "登録", new_user_registration_path, class:"link" %></li>
+    <% end %>
+  </div>
+
+</header>

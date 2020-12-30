@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="form-wrap">
+    <% @text = t('.sign_in') %>
+    <% @url = user_session_path %>
+
+    <%= render "devise/shared/form" %>
+
+    <%= link_to "新しいアカウントを作成", new_user_registration_path, class:"link" %>
+  </div>
+</div>
