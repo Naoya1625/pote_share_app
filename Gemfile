@@ -9,7 +9,7 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
-
+gem 'bootstrap-sass', '3.4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record

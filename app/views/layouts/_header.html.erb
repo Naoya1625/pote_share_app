@@ -17,6 +17,7 @@
   </div>
 
   <div class="header-right">
+
     <% if user_signed_in? %>
       <li class="login-user-name"><%= current_user.name %></li>
       <li class="dropdown">
@@ -32,8 +33,8 @@
           </li>
         </ul>
       </li>
-    <% else %>
 
+    <% else %>
       <li><%= link_to "ログイン", new_user_session_path, class:"link"%></li>
       <li><%= link_to "登録", new_user_registration_path, class:"link" %></li>
     <% end %>
