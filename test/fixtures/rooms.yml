@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_name: MyString
+  price_per_person_per_night: 
+  owner_id: 1
+
+two:
+  room_name: MyString
+  price_per_person_per_night: 
+  owner_id: 1

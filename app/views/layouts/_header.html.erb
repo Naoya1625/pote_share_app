@@ -25,12 +25,11 @@
           <i class="user-icon fas fa-user-circle"></i>
         </a>
         <ul class="dropdown-menu dropdown-menu-right">
-          <li><%= link_to "プロフィール", "#" %></li>
-          <li><%= link_to "設定", '#' %></li>
-          <li class="divider"></li>
-          <li>
-             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          </li>
+          <li><%= link_to "ルーム登録", new_room_path %></li>
+          <li><%= link_to "予約済みルーム一覧", rooms_path %></li>
+          <li><%= link_to "登録済みルーム一覧", rooms_path %></li>
+          <li><%= link_to "設定", users_account_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         </ul>
       </li>
 

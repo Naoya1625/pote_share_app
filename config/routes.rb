@@ -1,5 +1,26 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+  get 'users/show'
+  get 'users/edit'
   root 'homes#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :rooms, except: [:edit]
+  get "booking", to: "rooms#booking"
+  post "reserve", to: "rooms#reserve"
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+
+
+  devise_scope :user do
+    get 'users/account' => 'users/registrations#account'
+    get 'users/profile' => 'users/registrations#profile'
+  end
+
+
+  resources :users, only: [:show, :edit]
+
+
 end

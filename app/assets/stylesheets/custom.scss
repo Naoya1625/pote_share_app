@@ -129,3 +129,24 @@ header {
 
   background-color: rgb(205, 108, 63);
 }
+
+/* 設定ページ */
+.account-wrap {
+  height: 1000px;
+  width: 100%;
+}
+
+.account-left {
+  font-size: 20px;
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid lightgray;
+  padding-right: 10px;
+
+}
+
+.account-toggle {
+  width:100%;
+  display:inline-block;
+  border-right: 5px solid blue;
+}
