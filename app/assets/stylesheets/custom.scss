@@ -121,12 +121,9 @@ header {
   padding: 8px 0px;
   margin: 20px 0px;
 }
-.small-btn {
-  width: 100px;
-}
-
-.tbl-btn {
-  text-align: center;
+.table-btn{
+  display: inline-block;
+  width: 100%;
 }
 
 /* alert */
@@ -170,36 +167,46 @@ header {
   text-align: center;
 }
 .account-tbl {
-  display: inline-block;
-  width: 80%;
-  height: 304px;
-  margin-top: 30px;
-  padding: 0px 20px;
   background-color: white;
+  font-size: 16px;
+  width: 80%;
+  margin: 30px auto;
+  padding: 10px;
   border: 1px solid lightgray;
+  table{
+    width: 100%;
+  }
+  th, td {
+    height: 70px;
+  }
+}
+th {
+  padding-left: 20px;
+  width:30%;
+}
+.account-tbl td{
   text-align: left;
-  table {
-    width: 100%;
-  }
-  h5 {
-    font-size: 20px;
-  }
-  tr {
-    width: 100%;
-    border-bottom: 1px solid lightgray;
-    padding: 10px 0px;
-    height: 75px;
-  }
 }
-.profile-tbl {
-  height: 500px;
+.table-title {
+  vertical-align: top;
+  font-size: 24px;
+  align: left;
 }
-.td-left {
-  font-weight: bold;
-  width: 200px;
-  padding-left: 10px;
+.tr-border-bottom {
+  border-bottom: 1px solid lightgray;
 }
-
-.tr-center {
+.btn-table th{
+  padding-top: 10px;
   text-align: center;
+
+  a {
+    color: white;
+    display: inline-block;
+    width: 150px;
+    background-color: rgb(0, 110, 255);
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: normal;
+  }
+
 }

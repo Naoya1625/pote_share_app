@@ -9,21 +9,21 @@
   <div class="account-right">
     <div class="account-tbl">
         <table>
-          <tr>
-            <td class="tbl-left"><h5><%= t('.account') %></h5></td>
+          <tr class="table-title tr-border-bottom">
+            <th><%= t('.account') %></th>
             <td></td>
           </tr>
-          <tr>
-            <td class="td-left"><%= t('.email') %></td>
+          <tr class="tr-border-bottom">
+            <th><%= t('.email') %></th>
             <td><%= current_user.email %></td>
           </tr>
-          <tr>
-            <td class="td-left"><%= t('.password') %></td>
+          <tr class="tr-border-bottom">
+            <th><%= t('.password') %></th>
             <td><%= "*" * 10 %></td>
           </tr>
-          <tr class="tbl-btn">
-            <td><%= link_to t('.edit'), edit_user_password_path, class:"original-btn small-btn" %></td>
-
+          <tr class="btn-table">
+            <th><%= link_to t('.edit'), edit_user_password_path, class:"table-btn" %></th>
+            <td></td>
           </tr>
         </table>
     </div>  

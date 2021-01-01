@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_120410) do
+ActiveRecord::Schema.define(version: 2021_01_01_073204) do
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "reserving_user_id"
+    t.integer "reserved_room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reserved_room_id"], name: "index_reservations_on_reserved_room_id"
+    t.index ["reserving_user_id", "reserved_room_id"], name: "index_reservations_on_reserving_user_id_and_reserved_room_id", unique: true
+    t.index ["reserving_user_id"], name: "index_reservations_on_reserving_user_id"
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string "room_name"
