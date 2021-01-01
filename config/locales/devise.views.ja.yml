@@ -113,9 +113,13 @@ ja:
       profile: 
         profile: プロフィール
         account: アカウント
+        edit: 編集
       account: 
         profile: プロフィール
         account: アカウント
+        email: メールアドレス
+        password: パスワード
+        edit: 編集
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:

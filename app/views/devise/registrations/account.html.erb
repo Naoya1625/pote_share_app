@@ -1,0 +1,35 @@
+<div class="account-wrap">
+  <div class="account-left">
+    <ul>
+      <li><%= link_to t('.account'), users_account_path, class:"account-toggle select-account" %></li>
+      <li><%= link_to t('.profile'), users_profile_path, class:"account-toggle" %></li>
+    </ul>
+  </div>
+
+  <div class="account-right">
+    <div class="account-tbl">
+        <table>
+          <tr>
+            <td class="tbl-left"><h5><%= t('.account') %></h5></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="td-left"><%= t('.email') %></td>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <td class="td-left"><%= t('.password') %></td>
+            <td><%= "*" * 10 %></td>
+          </tr>
+          <tr class="tbl-btn">
+            <td><%= link_to t('.edit'), edit_user_password_path, class:"original-btn small-btn" %></td>
+
+          </tr>
+        </table>
+    </div>  
+  </div>
+
+
+
+</div>
+

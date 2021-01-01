@@ -3,7 +3,6 @@
 /* common */
 body {
   margin: 0;
-  font-family: "メイリオ";
 }
 
 li {
@@ -113,6 +112,7 @@ header {
 
 /* btn */
 .original-btn {
+  display: inline-block;
   border: none;
   border-radius: 5px;
   color: white;
@@ -121,12 +121,18 @@ header {
   padding: 8px 0px;
   margin: 20px 0px;
 }
+.small-btn {
+  width: 100px;
+}
+
+.tbl-btn {
+  text-align: center;
+}
 
 /* alert */
 .notification {
   width: 100%;
   top: 0px;
-
   background-color: rgb(205, 108, 63);
 }
 
@@ -138,15 +144,62 @@ header {
 
 .account-left {
   font-size: 20px;
-  width: 20%;
+  width: 15%;
   height: 100%;
   border-right: 2px solid lightgray;
   padding-right: 10px;
+  float: left;
 
 }
 
 .account-toggle {
-  width:100%;
-  display:inline-block;
-  border-right: 5px solid blue;
+  color: black;
+  width: 100%;
+  display: inline-block;
+  padding: 10px 0px;
+}
+.select-account {
+  color: rgb(108, 160, 228);
+  border-right: 4px solid rgb(0, 89, 255);
+}
+.account-right{
+  width: 85%;
+  height: 100%;
+  display: inline-block;
+  background-color: rgb(231, 241, 245);
+  text-align: center;
+}
+.account-tbl {
+  display: inline-block;
+  width: 80%;
+  height: 304px;
+  margin-top: 30px;
+  padding: 0px 20px;
+  background-color: white;
+  border: 1px solid lightgray;
+  text-align: left;
+  table {
+    width: 100%;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  tr {
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0px;
+    height: 75px;
+  }
+}
+.profile-tbl {
+  height: 500px;
+}
+.td-left {
+  font-weight: bold;
+  width: 200px;
+  padding-left: 10px;
+}
+
+.tr-center {
+  text-align: center;
 }
