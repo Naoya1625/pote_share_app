@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_save   :set_introduction
+  before_save   :downcase_email
   validates :name, presence: true
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -11,11 +13,22 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
+
   has_many :rooms, foreign_key: :owner_id, dependent: :destroy
   has_many :reservations, class_name:  "Reservation",
                           foreign_key: "reserving_user_id",
                           dependent:   :destroy
   has_many :reserving_user, through: :relationships, source: :reserved_room
 
+  private
+    #ユーザの紹介文がnilなら空文字列を代入する(before_save)
+    def set_introduction
+      self.introduction = "" if ( self.introduction == nil )
+    end
+
+    # メールアドレスをすべて小文字にする(before_save)
+    def downcase_email
+      self.email = email.downcase
+    end
 
 end

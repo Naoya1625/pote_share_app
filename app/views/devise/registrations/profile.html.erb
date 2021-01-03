@@ -1,30 +1,56 @@
-<div class="account-wrap">
-  <div class="account-left">
+<div class="setting-wrap">
+  <div class="setting-left">
     <ul>
-      <li><%= link_to t('.account'), users_account_path, class:"account-toggle" %></li>
-      <li><%= link_to t('.profile'), users_profile_path, class:"account-toggle select-account" %></li>
+      <li><%= link_to t('.account'), users_account_path, class:"setting-toggle" %></li>
+      <li><%= link_to t('.profile'), users_profile_path, class:"setting-toggle select-account" %></li>
     </ul>
   </div>
 
-  <div class="account-right">
-    <div class="account-tbl profile-tbl">
+  <div class="setting-right">
+    <div class="profile-table">
         <table>
-          <tr>
-            <td class="tbl-left"><h5><%= t('.profile') %></h5></td>
+          <tr class="table-title tr-border-bottom">
+            <th><%= t('.profile') %></th>
             <td></td>
-          </tr>
-          <tr class="tr-center">
-            <td ><i class="user-icon fas fa-user-circle"></i></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="td-left"><%= t('.email') %></td>
-            <td><%= "*" * 10 %></td>
-          </tr>
-          <tr class="tbl-btn">
-            <td><%= link_to t('.edit'), edit_user_password_path, class:"original-btn small-btn" %></td>
+          <tr class="icon-table tr-border-bottom">
+            <th colspan="2" class="round-image">                
+                <% if @user.image %>
+                  <%= image_tag @user.image %>
+                  
+                <% else %> 
+                  <i class="fas fa-user-circle"></i><div class="required">必須</div>
+                  
+                <% end %></th>
+            </tr>
+          <%= form_with(model: @user, local: true) do |f| %>
+            <tr class="tr-border-bottom margin-top-10">
+              <th><%= t('.icon-image') %> <div class="required">必須</div></th>
+              <td><span class="image"><%= f.file_field :image %></span></td>
+            </tr>
 
-          </tr>
+            <tr class="tr-border-bottom">
+              <th><%= t('.name') %> <div class="required">必須</div></th>
+              <td>
+                <div class="left-justified">
+                  <%= f.text_field :name, class:"form-field", id:"full-width" , value: @user.name %>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="tr-border-bottom text-area-field">
+              <th><%= t('.introduction') %> <div class="required">必須</div></th>
+              <td>
+                <div class="left-justified">
+                  <%= f.text_area :introduction, class:"form-field", id:"full-width" , value: @user.introduction, placeholder:"自己紹介を入力" %>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="btn-table">
+              <th><%= f.submit t('.update'), class:"table-btn" %></th>
+              <td></td>
+            </tr>
+            <% end %>
         </table>
     </div>  
   </div>

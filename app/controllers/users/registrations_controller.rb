@@ -6,6 +6,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def account
     @user = current_user
   end
+  
+  def profile
+    @user = current_user
+  end
+
+
+
   # GET /resource/sign_up
   # def new
   #   super
