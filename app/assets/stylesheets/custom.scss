@@ -1,12 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /* common */
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
   margin: 0;
+  width: 100%;
+  height: 100%;
+  position:relative;
+  min-height: 120vh;
+
+  padding-bottom: 130px; /* footerの高さ */
+  box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+
 }
 .wrap {
-  position: relative;
+  height: 80%;
 }
+
 li {
   list-style: none;
 }
@@ -82,16 +95,17 @@ header {
 /* footer */
 footer {
   background-color: black;
-  height: 180px;
-  position: relative;
-  top: 0;
+  height: 130px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer-wrap {
   width: 100%;
   height: 100%;
   text-align: center;
-  padding-top: 70px;
+  padding-top: 50px;
   color: white;
 }
 
@@ -151,6 +165,7 @@ footer {
 }
 .form-field {
   font-size: 16px;
+  /* レスポンシブ対応で〇〇以下でwidth:100%みたいにする */
   width: 300px;
   height: 40px;
   border-radius: 5px;
@@ -188,7 +203,7 @@ footer {
 
 /* 設定ページ */
 .setting-wrap {
-  height: 1000px;
+  height: 120%;
   width: 100%;
 }
 
@@ -223,10 +238,11 @@ footer {
 .account-table {
   background-color: white;
   font-size: 16px;
-  width: 80%;
+  width: 60%;
   margin: 40px auto;
   padding: 10px;
   border: 1px solid lightgray;
+  border-radius: 5px;
   table{
     width: 100%;
   }
@@ -277,9 +293,10 @@ th {
   background-color: white;
   font-size: 16px;
   width: 80%;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 10px;
   border: 1px solid lightgray;
+  border-radius: 5px;
 
   table{
     width: 100%;
@@ -312,31 +329,45 @@ th {
 }
 .booking-left {
   float: left;
-  width:700px;
-  height: 500px;
+  width: 600px;
+  height: 700px;
   padding: 20px;
   /* 仮 */
   border: 1px solid black;
 }
 .booking-table {
   border: 1px solid black;
-  height: 200px;
+  height: 300px;
   text-align: left;
   table {
     height: 100%;
     width:100%;
   }
-  tr {
-    height: 33%;
-  }
 }
-.booking-right {
-/* 適当 */
-  height:
-  500px;
-  border: 1px solid black;
+.booking-image {
+  height: 400px;
 }
-
+.height-20 {
+  height: 20%;
+}
 .boooked-room-owner-image {
   width: 50px;
 }
+.booking-details-title {
+  font-weight: bold;
+  font-size: 26px;
+}
+.booking-details-content {
+  font-size: 18px;
+}
+.booking-introduction {
+  padding: 0px 20px;
+  height: 60%;
+  font-size:14px;
+}
+.booking-right {
+  /* 適当 */
+    height:
+    500px;
+    border: 1px solid black;
+  }

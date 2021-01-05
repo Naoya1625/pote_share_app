@@ -30,6 +30,7 @@ class RoomsController < ApplicationController
   #room  GET    /rooms/:id
   def booking
     @room = Room.find(params[:id])
+    @user = User.find(@room.owner_id)
   end
 
 

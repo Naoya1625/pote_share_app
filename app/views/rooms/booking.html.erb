@@ -7,18 +7,24 @@
 
     <div class="booking-table">
       <table>
-        <tr>
-          <td rowspan="2" class="boooked-room-owner-image td-border-bottom"><%= image_tag @room.owner.image %></td>
-          <td>右上</td>
+        <tr class="height-20">
+          <td rowspan="2" class="boooked-room-owner-image td-border-bottom">
+            <% if @user.image.attached? %>
+              <%= image_tag @room.owner.image %>
+            <% else %>
+              <i class="setting-user-icon fas fa-user-circle"></i>
+            <% end %>
+          </td>
+          <td class="booking-details-title"><%= @room.room_name %></td>
+        </tr>
+
+        <tr class="height-20">
+
+          <td class="booking-details-content"><%= @room.address %></td>
         </tr>
 
         <tr>
-
-          <td>右中</td>
-        </tr>
-
-        <tr>
-          <td colspan="2" class="td-border-bottom">左下</td>
+          <td colspan="2" class="td-border-bottom booking-details-content booking-introduction"><%= @room.room_introduction %></td>
 
         </tr>
       

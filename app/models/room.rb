@@ -6,6 +6,11 @@ class Room < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   has_one_attached :image
 
+  validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
+                                      message: "must be a valid image format" },
+                                      size: { less_than: 5.megabytes,
+                                      message: "should be less than 5MB" }
+
 #  mount_uploader :image, ImageUploader
   validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
                       message: "有効な画像形式である必要があります" },
@@ -14,7 +19,7 @@ class Room < ApplicationRecord
 
   # 表示用のリサイズ済み画像を返す
   def display_image
-    image.variant(resize_to_limit: [600, 600])
+    image.variant(resize_to_limit: [500, 280])
   end
 
   private

@@ -7,12 +7,13 @@
 
   <div class="setting-right">
     <div class="profile-table">
+      <%= form_with(model: @room, local: true) do |f| %>
         <table>
           <tr class="table-title tr-border-bottom">
             <th><%= t('.registration_room') %></th>
             <td></td>
           </tr>
-          <%= form_with(model: @room, local: true) do |f| %>
+
           
 
             <tr class="tr-border-bottom margin-top-10">
@@ -55,9 +56,9 @@
             <tr class="btn-table">
               <th><%= f.submit t('.registration'), method: :post, class:"table-btn" %></th>
               <td></td>
-            </tr>
-          <% end %>
-        </table>
+            </tr>  
+          </table>
+        <% end %>
     </div>  
   </div>
 
