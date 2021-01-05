@@ -34,7 +34,11 @@ li {
   width:  80px;       /* ※縦横を同値に */
   height: 80px;       /* ※縦横を同値に */
 }
-
+.header-round-image {
+  width:  50px;       /* ※縦横を同値に */
+  height: 50px;       /* ※縦横を同値に */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
 /* header */
 header {
   border: 1px solid black;
@@ -101,24 +105,29 @@ footer {
 .header-right {
   display: block;
   height: 100%;
-  float: right;  
-  
+  float: right;    
 }
 .login-user-name{
   display: inline-block;
   font-size: 30px;
   color: white;
   margin-right: 10px;
+
 }
 .user-icon {
   color: gray;
-  font-size:40px;
-  margin-top:10px;
+  font-size: 50px;
+  margin-right: 60px;
+}
+.header-user-image {
+
   margin-right: 60px;
 }
 .dropdown {
   display: inline-block;
-
+  i {
+      margin-top: 3px;
+  }
 }
 /* forms */
 .form-wrap {
@@ -244,7 +253,9 @@ th {
 
 .tr-border-bottom {
   border-bottom: 1px solid rgb(228, 224, 224);
-  
+}
+.td-border-bottom {
+  border-bottom: 1px solid rgb(228, 224, 224);
 }
 .btn-table th{
   padding-top: 10px;
@@ -292,3 +303,40 @@ th {
 
 
 /* booking */
+.booking-wrap {
+  text-align: center;
+  width: 900px;
+  height: 600px;
+  padding: 20px;
+
+}
+.booking-left {
+  float: left;
+  width:700px;
+  height: 500px;
+  padding: 20px;
+  /* 仮 */
+  border: 1px solid black;
+}
+.booking-table {
+  border: 1px solid black;
+  height: 200px;
+  text-align: left;
+  table {
+    height: 100%;
+    width:100%;
+  }
+  tr {
+    height: 33%;
+  }
+}
+.booking-right {
+/* 適当 */
+  height:
+  500px;
+  border: 1px solid black;
+}
+
+.boooked-room-owner-image {
+  width: 50px;
+}

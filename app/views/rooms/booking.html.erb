@@ -1,8 +1,40 @@
-<div >
-<div class="booking-left">
-  <%= image_tag @room.display_image, class:"booking-image" %>
-</div>
+<div class="booking-wrap">
 
-<div class="booking-right">
+  <div class="booking-left">
+    <div class="booking-image">
+      <%= image_tag @room.display_image, class:"booking-image" %>
+    </div>
+
+    <div class="booking-table">
+      <table>
+        <tr>
+          <td rowspan="2" class="boooked-room-owner-image td-border-bottom"><%= image_tag @room.owner.image %></td>
+          <td>右上</td>
+        </tr>
+
+        <tr>
+
+          <td>右中</td>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="td-border-bottom">左下</td>
+
+        </tr>
+      
+      </table>
+    </div>
+    
+
+
+  </div>
+
+ 
+
+  <!-- ここからは予約画面右側 -->
+  <div class="booking-right">
+    <p>aaaa</p>
+
+  </div>
 
 </div>

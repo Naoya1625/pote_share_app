@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update]
+  before_action :configure_permitted_parameters
   
   #before_action :authenticate_user!
 
@@ -8,10 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = current_user
   end
   
-  def profile
-    @user = current_user
-  end
-
 
 
   # GET /resource/sign_up
@@ -29,10 +26,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # PUT /resource
-  # def update
-  #   super
-  # end
+  #PUT /resource
+  #def update
+  #  super
+  #end
 
   # DELETE /resource
   # def destroy
@@ -48,8 +45,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+    # ユーザ情報更新にはパスワードを必要としない
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
 
+    def configure_account_update_params
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :introduction])
+    end
+
+    #ユーザ情報更新後のリダイレクト先変更
+    def after_update_path_for(resource)
+      users_profile_path
+    end
+
+    #ストロングパラメータにカラム追加
+    def configure_permitted_parameters
+      added_attrs = [ :email, :name, :password, :password_confirmation, :image, :introduction]
+      devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+      devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+      devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
+    end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
