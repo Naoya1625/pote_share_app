@@ -1,0 +1,11 @@
+〜〜〜 メモ 〜〜〜　
+     やることリスト
+・ヘッダーのアイコンをユーザの画像に。（デフォ）
+・before_filterでログインユーザのみ許可
+・ヘッダーカブ固定
+・css（profile-table)のミックスイン
+
+.seed の sample-roomを作成（imageuplorder?を完了する必要あり)
+
+・application_helperとかapplication_controllerとかで
+set_introductionメソッド(helperに定義)を一つの記述で使えないか。(before_save用)

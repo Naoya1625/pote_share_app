@@ -4,7 +4,9 @@
 body {
   margin: 0;
 }
-
+.wrap {
+  position: relative;
+}
 li {
   list-style: none;
 }
@@ -22,7 +24,8 @@ li {
 .text-area-field {
   vertical-align: top;
   textarea {
-    height: 200px;
+    height: 130px;
+    padding: 10px;
   }
 }
 
@@ -72,6 +75,23 @@ header {
   }
 }
 
+/* footer */
+footer {
+  background-color: black;
+  height: 180px;
+  position: relative;
+  top: 0;
+}
+
+.footer-wrap {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 70px;
+  color: white;
+}
+
+/*  */
 .search-form {
   border: none;
   width: 160px;
@@ -127,6 +147,9 @@ header {
   border-radius: 5px;
   border: 1px solid lightgray;
   padding: 0px 8px;
+}
+.input-file-field {
+  margin-bottom: 20px;
 }
 .margin-top-10 {
   margin-top: 10px;
@@ -192,7 +215,7 @@ header {
   background-color: white;
   font-size: 16px;
   width: 80%;
-  margin: 30px auto;
+  margin: 40px auto;
   padding: 10px;
   border: 1px solid lightgray;
   table{
@@ -220,7 +243,8 @@ th {
 }
 
 .tr-border-bottom {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgb(228, 224, 224);
+  
 }
 .btn-table th{
   padding-top: 10px;

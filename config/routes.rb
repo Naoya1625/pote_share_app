@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'rooms/new'
   get 'users/show'
   get 'users/edit'
   root 'homes#index'

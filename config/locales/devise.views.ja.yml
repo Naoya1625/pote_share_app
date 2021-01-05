@@ -29,6 +29,16 @@ ja:
     models:
       user: ユーザ
       room: ルーム
+  rooms:
+    new:
+      information: 基本情報
+      registration_room: ルーム情報登録
+      room_name: ルーム名
+      room_introduction: ルーム紹介
+      price: 料金
+      address: 住所
+      room_image: ルーム画像
+      registration: 登録
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
