@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
-  
-  get 'rooms/new'
-  get 'users/show'
-  get 'users/edit'
+  get 'reservations/index'
   root 'homes#index'
 
-  resources :rooms, except: [:edit]
-  get "booking", to: "rooms#booking"
+  #Room
+
+  resources :rooms, except: [:edit, :show]
+  get "booking/:id", to: "rooms#booking", as: "booking"
   post "reserve", to: "rooms#reserve"
 
+  #Reservation
+  resources :reservations, only: [:index, :new, :create]
+  #get "reservations", to: "reservations#index"
+  #get "reservations/new", to: "reservations#new"
+  
+  #User
+  get 'users/show'
+  get 'users/edit'
+
+  #User(device)
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'

@@ -9,3 +9,8 @@
 
 ・application_helperとかapplication_controllerとかで
 set_introductionメソッド(helperに定義)を一つの記述で使えないか。(before_save用)
+
+
+・エラ〜メッセージの多言語化
+
+・フィードを作り、ユーザのルーム一覧が見れるように。

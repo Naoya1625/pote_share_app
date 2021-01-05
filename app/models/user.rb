@@ -15,11 +15,21 @@ class User < ApplicationRecord
 
 
   has_many :rooms, foreign_key: :owner_id, dependent: :destroy
+
   has_many :reservations, class_name:  "Reservation",
                           foreign_key: "reserving_user_id",
                           dependent:   :destroy
-  has_many :reserving_user, through: :relationships, source: :reserved_room
+  has_many :reserving_user, through: :reservations, source: :reserved_room
 
+    # ルームの予約をする
+    def reserve(room)
+      self.reservations << room
+    end
+  
+    # 現在のユーザーが予約してたらtrueを返す
+    def reserving?(room)
+      self.reservations.include?(room)
+    end
   private
     #ユーザの紹介文がnilなら空文字列を代入する(before_save)
     def set_introduction

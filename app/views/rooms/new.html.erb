@@ -13,6 +13,7 @@
             <td></td>
           </tr>
           <%= form_with(model: @room, local: true) do |f| %>
+          
 
             <tr class="tr-border-bottom margin-top-10">
               <th><%= t('.room_name') %> <div class="required">必須</div></th>
@@ -41,21 +42,21 @@
               <th><%= t('.address') %> <div class="required">必須</div></th>
               <td>
                 <div class="left-justified">
-                  <%= f.text_field :room_introduction, class:"form-field", id:"full-width", placeholder:"自己紹介を入力" %>
+                  <%= f.text_field :address, class:"form-field", id:"full-width", placeholder:"自己紹介を入力" %>
                 </div>
               </td>
             </tr>
             
             <tr class="tr-border-bottom">
               <th><%= t('.room_image') %> <div class="required">必須</div></th>
-              <td><span class="image"><%= f.file_field :image, class:'input-file-field' %></span></td>
+              <td><span class="image"><%= f.file_field :image,accept: "image/jpeg,image/gif,image/png", class:'input-file-field' %></span></td>
             </tr>
 
             <tr class="btn-table">
-              <th><%= f.submit t('.registration'), class:"table-btn" %></th>
+              <th><%= f.submit t('.registration'), method: :post, class:"table-btn" %></th>
               <td></td>
             </tr>
-            <% end %>
+          <% end %>
         </table>
     </div>  
   </div>

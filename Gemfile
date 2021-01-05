@@ -10,6 +10,11 @@ gem 'devise'
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 gem 'bootstrap-sass', '3.4.1'
+
+gem 'active_storage_validations', '0.8.2'
+
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
