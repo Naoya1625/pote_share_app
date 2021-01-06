@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-/* common */
+/* common ----------------------------------------*/
 html {
   height: 100%;
   width: 100%;
@@ -52,7 +52,7 @@ li {
   height: 50px;       /* ※縦横を同値に */
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
-/* header */
+/* header ----------------------------------------*/
 header {
   border: 1px solid black;
   height: 60px;
@@ -92,7 +92,7 @@ header {
   }
 }
 
-/* footer */
+/* footer ----------------------------------------*/
 footer {
   background-color: black;
   height: 130px;
@@ -109,7 +109,7 @@ footer {
   color: white;
 }
 
-/*  */
+/*  ----------------------------------------*/
 .search-form {
   border: none;
   width: 160px;
@@ -143,7 +143,7 @@ footer {
       margin-top: 3px;
   }
 }
-/* forms */
+/* forms ----------------------------------------*/
 .form-wrap {
   display: inline-block;
   border: 1px solid lightgray;
@@ -178,23 +178,43 @@ footer {
 .margin-top-10 {
   margin-top: 10px;
 }
-/* btn */
+/* btn ----------------------------------------*/
 .original-btn {
   display: inline-block;
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: rgb(0, 140, 255);
+  background-color: rgb(74, 172, 252);
   width: 350px;
   padding: 8px 0px;
   margin: 20px 0px;
 }
-.table-btn{
-  display: inline-block;
-  width: 100%;
+
+.submit-btn-profile {
+  display: block;
+  width: 90%;
+  color: white;
+  background-color: rgb(83, 178, 255);
+  border-radius: 5px;
+  border: none;
+  height:40px;
+}
+.submit-btn-account {
+  color: white;
+  background-color: rgb(83, 178, 255);
+  width:90%;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+#setting-submit-btn { 
+  /* setting-pageのsubmit-btnの共通のpadding-bottomを打ち消すため */
+  padding-bottom: 0px; 
+
 }
 
-/* alert */
+/* alert ----------------------------------------*/
 .notification {
   width: 100%;
   top: 0px;
@@ -202,11 +222,13 @@ footer {
 }
 
 /* 設定ページ */
+/*
 .setting-wrap {
   height: 120%;
   width: 100%;
 }
-
+*/
+/*
 .setting-left {
   font-size: 20px;
   width: 15%;
@@ -215,7 +237,8 @@ footer {
   padding-right: 10px;
   float: left;
 }
-
+*/
+/*
 .setting-toggle {
   color: black;
   width: 100%;
@@ -233,8 +256,9 @@ footer {
   background-color: rgb(231, 241, 245);
   text-align: center;
 }
-
+*/
 /* 設定ページのアカウント画面 */
+/*
 .account-table {
   background-color: white;
   font-size: 16px;
@@ -287,8 +311,10 @@ th {
     border: none;
   }
 }
+*/
 
 /* 設定ページのプロフィール画面 */
+/*
 .profile-table {
   background-color: white;
   font-size: 16px;
@@ -317,9 +343,10 @@ th {
   font-size:60px;
   padding:20px;
 }
+*/
 
+/* booking ----------------------------------------*/
 
-/* booking */
 .booking-wrap {
   text-align: center;
   width: 900px;
@@ -371,3 +398,131 @@ th {
     500px;
     border: 1px solid black;
   }
+
+
+/* Setting-Right ----------------------------------------*/
+
+.setting-wrap {
+  display: flex;   /*並列になる*/
+  flex-wrap: wrap;  /*直下が折り返す*/
+  box-sizing: border-box;
+  width: 100%;
+  height: 120%;
+}
+
+
+.setting-right {
+  width: 80%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-top: 30px;
+  background-color: rgb(236, 250, 250);
+}
+#setting-title {
+  padding-top:0px;
+  padding-left: 0px;
+  font-size: 18px;
+}
+.setting-right-content {
+  margin-bottom: auto;
+  padding: 10px;
+  border: 1px solid rgb(221, 221, 221); /* 仮 */
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 80%;
+  display: flex;
+  flex-basis: 500px;
+  flex-grow: 0.3;
+  background-color:white;
+
+  ul {
+    padding-left: 0px;
+    width: 100%;
+  }
+  li {
+    display: flex;   /*並列になる*/
+    flex-wrap: wrap;  /*直下が折り返す*/
+
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+  }
+  form {
+    width: 100%;
+  }
+
+  input[type="text"],textarea {   /*入力フォーム*/
+    width: 100%;
+    box-sizing: border-box;   
+  }
+  textarea {
+    height: 100px;
+  }
+  ul span:first-of-type {    /*見出し*/
+    flex-basis: 150px;
+
+  }
+  ul span:nth-of-type(2) {
+    flex-basis: 200px;
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+#setting-user-image {
+  padding-bottom: 10px;
+
+  i{
+    margin: 0 auto;
+    font-size: 50px;
+  }
+} 
+
+/* setting-Left ----------------------------------------*/
+.setting-left {
+  border: 1px solid black; /* 仮 */
+  box-sizing: border-box;
+  width: 20%;
+  display: flex;
+}
+#setting-toggle {     /* 選択中のリンク */
+  border-right: 3px solid rgb(0, 179, 211);
+  color: rgb(0, 179, 211)
+}
+.setting-left-content {
+
+  width: 100%;
+  padding-top: 50px;
+
+  ul {
+    /* border: 1px solid black; */
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  li {
+    width:90%;
+    height: 50px;
+    display: flex;
+  }
+
+  a {
+    color: black;
+    display: block;
+    height: 100%;
+    padding-top:14px;
+    width: 100%;
+  }
+}
+/* ちょい足しcss ----------------------------------------*/
+.border-bottom-gray {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+.font-bold span:first-of-type {
+  font-weight: bold;
+}
