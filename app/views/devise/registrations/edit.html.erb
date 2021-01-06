@@ -22,7 +22,7 @@
 
                         
               <% if @user.image.attached? %>
-                <%= image_tag @user.image %>
+                <%= image_tag @user.display_image %>
               <% else %>
                 <i class="setting-user-icon fas fa-user-circle"></i>
               <% end %>

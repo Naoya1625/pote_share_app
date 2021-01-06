@@ -1,3 +1,62 @@
+
+<div class="setting-wrap">
+  <div class="setting-left">
+    <div class="setting-left-content">
+      <ul>
+        <li><%= link_to t('.information'), users_account_path, id:"setting-toggle" %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="setting-right">
+    <div class="setting-right-content">
+      <%= form_with model: @room, url: rooms_path, local: true do |f| %>
+
+        <ul>
+          <li class="border-bottom-gray" id="setting-title">
+            <span><%= t('.registration_room') %></span>
+            <span></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.room_name') %> <div class="required">必須</div></span>
+            <span><%= f.text_field :room_name, placeholder:"ルーム名を入力" %></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.room_introduction') %> <div class="required">必須</div></span>
+            <span><%= f.text_area :room_introduction,  placeholder:"ルーム説明を入力" %></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.price') %> <div class="required">必須</div></span>
+            <span><%= f.text_field :price_per_person_per_night, class:"#", id:"aaa" , placeholder:"1日あたりの料金を入力" %></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.address') %> <div class="required">必須</div></span>
+            <span><%= f.text_field :address, class:"#", id:"aaa" , placeholder:"住所を入力" %></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.room_image') %> <div class="required">必須</div></span>
+            <span><%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %></span>
+          </li>
+
+          <li id="setting-submit-btn">
+            <span><%= f.submit t('.registration'), class:"submit-btn-profile" %></span>
+            <span></span>
+          </li>
+        </ul>
+
+      <% end %>
+
+    </div>  
+  </div>
+
+
+<%
+=begin%>
 <div class="setting-wrap">
   <div class="setting-left">
     <ul>
@@ -65,3 +124,6 @@
 
 </div>
 
+<%
+=end
+%>
