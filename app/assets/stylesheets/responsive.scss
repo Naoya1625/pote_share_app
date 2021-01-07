@@ -1,6 +1,6 @@
 
-@media screen and (max-width: 959px) {
-  /* 959px以下に適用されるCSS（タブレット用） */
+@media screen and (max-width: 960px) {
+  /* 960px以下に適用されるCSS（タブレット用） */
   /* Header */
   .header-forms-area,.header-forms-keyword {
     display: none;
@@ -63,6 +63,29 @@
     border-bottom: 3px solid rgb(0, 179, 211);
     color: rgb(0, 179, 211)
   }
+
+  
+
+  .booking-left {
+    flex-basis: 100%;
+    min-width: 150px;
+  }
+  .booking-image {
+    width: 100%;
+
+
+  }
+  .booking-image img{
+
+
+    height: 100%;
+    flex-shrink: 1;
+  }
+  .booking-right {
+    flex-basis: 90%;
+    min-width: 150px;
+  }
+
 }/* ここまでがタブレット用CSS -------------------------------------*/
 
 
