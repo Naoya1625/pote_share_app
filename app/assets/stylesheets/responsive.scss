@@ -1,6 +1,17 @@
 
 @media screen and (max-width: 959px) {
   /* 959px以下に適用されるCSS（タブレット用） */
+  /* Header */
+  .header-forms-area,.header-forms-keyword {
+    display: none;
+  }
+
+  /* btn */
+  .submit-btn-profile,.submit-btn-account {
+    width: 100%;
+  }
+
+  /* Setting-page */
   .setting-left {
     width: 100%;
     height: 70px;
@@ -10,6 +21,22 @@
   .setting-right {
     width: 100%;
     height: 100%;
+  }
+  .setting-right-content {
+    width: 100%;
+
+
+    ul span:first-of-type {    /*見出し*/
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 100%;
+
+    }
+    ul span:nth-of-type(2) {
+      flex-basis: 100%;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
   }
   .setting-left-content {
     padding-top: 0px;
@@ -23,15 +50,14 @@
       box-sizing: border-box;
       flex-direction: row;
     }
+
     li {
       padding-top:10px;
       height: 80%;
       width: 100px;
       text-align: center;
     }
-
   }
-
   #setting-toggle {     /* 選択中のリンク */
     border-right: none;
     border-bottom: 3px solid rgb(0, 179, 211);
@@ -42,5 +68,9 @@
 
 
 @media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
+  /* 480px以下に適用されるCSS（スマホ用） */
+  /* Header */
+  .login-user-name {
+    display: none;
+  }
 }

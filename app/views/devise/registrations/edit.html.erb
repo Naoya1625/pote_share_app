@@ -18,11 +18,11 @@
             <span></span>
           </li>
 
-          <li class="border-bottom-gray font-bo ld" id="setting-user-image">
+          <li class="border-bottom-gray font-bo ld round-image" id="setting-user-image">
 
                         
               <% if @user.image.attached? %>
-                <%= image_tag @user.display_image %>
+                <%= image_tag @user.display_image(50, 50) %>
               <% else %>
                 <i class="setting-user-icon fas fa-user-circle"></i>
               <% end %>

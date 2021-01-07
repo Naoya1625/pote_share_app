@@ -32,8 +32,8 @@ class User < ApplicationRecord
   end
 
   # 表示用のリサイズ済み画像を返す
-  def display_image
-    image.variant(resize_to_limit: [50, 50])
+  def display_image(width, height)
+    image.variant(resize_to_limit: [width, height])
   end
 
   # 現在のユーザーが予約してたらtrueを返す

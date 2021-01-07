@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
     @rooms = current_user.rooms
   end
 
-  #new_room GET    /rooms/new
+  #new_room GET    /rooms/new ルーム登録画面
   def new
     @user = current_user
     @room = Room.new
@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
       #とりあえずroot
       redirect_to booking_url(@room)
     else
-      render 'homes/index'
+      render :new
     end
   end
 

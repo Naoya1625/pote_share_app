@@ -1,46 +1,82 @@
 <div class="booking-wrap">
 
-  <div class="booking-left">
-    <div class="booking-image">
-      <%= image_tag @room.display_image, class:"booking-image" %>
-    </div>
+  <div class="booking-content">
 
-    <div class="booking-table">
-      <table>
-        <tr class="height-20">
-          <td rowspan="2" class="boooked-room-owner-image td-border-bottom">
+
+    <div class="booking-left">
+      <div class="booking-image"> <!-- BookingPageの画像 -->
+        <%= image_tag @room.display_image(600, 410) %>
+      </div>
+
+      <div class="booking-details"><!-- BookingPageのタイトル、住所など -->
+
+        <div class="details-icon border-bottom-gray">
             <% if @user.image.attached? %>
-              <%= image_tag @room.owner.display_image %>
+              <%= image_tag @room.owner.display_image(50, 50) %>
             <% else %>
               <i class="setting-user-icon fas fa-user-circle"></i>
             <% end %>
-          </td>
-          <td class="booking-details-title"><%= @room.room_name %></td>
-        </tr> 
+        </div>
 
-        <tr class="height-20">
+        <div class="details-name">
+            <p id="details-room-name"><%= @room.room_name %></p>
+        </div>
 
-          <td class="booking-details-content"><%= @room.address %></td>
-        </tr>
+        <div class="details-address border-bottom-gray">
+          <p id="details-address"><%= @room.address %></p>
+        </div>
 
-        <tr>
-          <td colspan="2" class="td-border-bottom booking-details-content booking-introduction"><%= @room.room_introduction %></td>
+        <div class="details-introduction border-bottom-gray">
+          <p><%= @room.room_introduction %></p> 
+        </div>
 
-        </tr>
-      
-      </table>
+      </div>  
+
+
     </div>
-    
+      
 
+
+
+  
+
+    <!-- ここからは予約画面右側 -->
+    <div class="booking-right">
+      <a>aaa</a>
+
+    </div>
 
   </div>
 
- 
 
-  <!-- ここからは予約画面右側 -->
-  <div class="booking-right">
-    <p>aaaa</p>
-
-  </div>
 
 </div>
+
+<%
+=begin%>
+        <table>
+          <tr class="height-20">
+            <td rowspan="2" class="boooking-owner-image">
+              <% if @user.image.attached? %>
+                <%= image_tag @room.owner.display_image(50, 50) %>
+              <% else %>
+                <i class="setting-user-icon fas fa-user-circle"></i>
+              <% end %>
+            </td>
+            <td class="booking-details-title"><%= @room.room_name %></td>
+          </tr> 
+
+          <tr class="height-20">
+
+            <td class="booking-details-content"><%= @room.address %></td>
+          </tr>
+
+          <tr>
+            <td colspan="2" class=""><%= @room.room_introduction %></td>
+
+          </tr>
+        
+        </table>
+<%
+=end
+%>
