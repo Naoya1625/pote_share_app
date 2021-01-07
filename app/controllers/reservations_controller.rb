@@ -12,5 +12,6 @@ class ReservationsController < ApplicationController
 
   #reservations  POST   /reservations
   def create
+    #この中で合計金額を計算、、、？もしくはビューで計算するか。
   end
 end

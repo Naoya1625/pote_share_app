@@ -34,17 +34,41 @@
 
 
     </div>
-      
-
-
-
   
 
     <!-- ここからは予約画面右側 -->
     <div class="booking-right">
-      <a>aaa</a>
+        <div class="setting-right-content" id="booking-form">
+          <%= form_with model: @reservation, url: reservations_path, local: true do |f| %>
+            <ul>
 
-    </div>
+              <li>
+                <span>¥ <%= @room.price_per_person_per_night%> / <%= t('.day') %></span>
+              </li>
+
+              <li>
+                <span><%= t('.start_date') %></span>
+                <span><%= f.date_field :start_date %></span>
+              </li>
+
+              <li>
+                <span><%= t('.end_date') %></span>
+                <span><%= f.date_field :end_date %></span>
+              </li>
+
+              <li class=>
+                <span><%= t('.number_of_people') %></span>
+                <span><%= f.number_field :number_of_people %></span>
+              </li>
+
+              <li>
+                <%= f.submit t('.reserve'), class:"submit-btn-profile" %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+
+      </div>  
 
   </div>
 

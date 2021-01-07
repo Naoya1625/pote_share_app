@@ -39,6 +39,12 @@ ja:
       address: 住所
       room_image: ルーム画像
       registration: 登録
+    booking:
+      day: 日
+      start_date: 開始日
+      end_date: 終了日
+      number_of_people: 人数
+      reserve: 予約する
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
