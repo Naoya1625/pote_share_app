@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_083424) do
     t.date "start_date", null: false
     t.date "end_date", null: false
     t.integer "number_of_people", null: false
+    t.integer "amount"
     t.index ["reserved_room_id"], name: "index_reservations_on_reserved_room_id"
     t.index ["reserving_user_id", "reserved_room_id"], name: "index_reservations_on_reserving_user_id_and_reserved_room_id", unique: true
     t.index ["reserving_user_id"], name: "index_reservations_on_reserving_user_id"

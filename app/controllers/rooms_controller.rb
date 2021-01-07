@@ -34,7 +34,7 @@ class RoomsController < ApplicationController
   end
 
 
-  # get "rooms/newなんちゃら" ここの確定を押すと正式に予約が作られる。
+  # get "rooms/newなんちゃら" ここの確定を押すと正式に予約が作られる     ←違う！
    #予約確認画面
   #def new
   #  @reservation = Reservation
@@ -42,7 +42,7 @@ class RoomsController < ApplicationController
 
   #reserve POST   /reserve
   def reserve
-    @room = Reservation.new(reservation_params)
+    @room = Reservation.build(reservation_params)
     if room.save
       flash[:success] = "せいこうううう"
       redirect_to root_url

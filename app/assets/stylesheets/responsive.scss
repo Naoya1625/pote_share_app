@@ -1,17 +1,17 @@
 
 @media screen and (max-width: 960px) {
   /* 960px以下に適用されるCSS（タブレット用） */
-  /* Header */
+  /* Header --------------------------*/
   .header-forms-area,.header-forms-keyword {
     display: none;
   }
 
-  /* btn */
+  /* btn --------------------------*/
   .submit-btn-profile,.submit-btn-account {
     width: 100%;
   }
 
-  /* Setting-page */
+  /* Setting-page --------------------------*/
   .setting-left {
     width: 100%;
     height: 70px;
@@ -24,7 +24,6 @@
   }
   .setting-right-content {
     width: 100%;
-
 
     ul span:first-of-type {    /*見出し*/
       flex-grow: 0;
@@ -50,7 +49,6 @@
       box-sizing: border-box;
       flex-direction: row;
     }
-
     li {
       padding-top:10px;
       height: 80%;
@@ -63,21 +61,14 @@
     border-bottom: 3px solid rgb(0, 179, 211);
     color: rgb(0, 179, 211)
   }
-
-  
-
   .booking-left {
     flex-basis: 100%;
     min-width: 150px;
   }
   .booking-image {
     width: 100%;
-
-
   }
   .booking-image img{
-
-
     height: 100%;
     flex-shrink: 1;
   }
@@ -86,13 +77,14 @@
     min-width: 150px;
   }
 
-}/* ここまでがタブレット用CSS -------------------------------------*/
+
+}/* -----------------------------------------------------------------------------------------*/
 
 
 
 @media screen and (max-width: 480px) {
   /* 480px以下に適用されるCSS（スマホ用） */
-  /* Header */
+  /* Header --------------------------*/
   .login-user-name {
     display: none;
   }

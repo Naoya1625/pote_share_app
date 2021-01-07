@@ -19,3 +19,8 @@ set_introductionメソッド(helperに定義)を一つの記述で使えない�
  .room#create(ルーム登録画面)でfile未選択で登録しようとするとエラーに。
 
  .READMEを書く。
+
+。１週間以上泊まれないようにバリデーション！
+
+.明日やること
+     reservationのcreateアクションに、洗濯中のルーム情報を渡せないか。

@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 /* common ----------------------------------------*/
 html {
   height: 100%;
@@ -8,30 +9,23 @@ html {
 body {
   margin: 0;
   width: 100%;
-
   position:relative;
-
   display: flex;
   flex-direction: column;
   min-height: 120vh;
-
-  padding-bottom: 130px; /* footerの高さ */
+  /*padding-bottom: 130px; /* footerの高さ */
   box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
-
 }
 a:hover {
   text-decoration: none !important; 
   color: rgb(0, 179, 211) !important;
 }
-
 .wrap {
-  height: 80%;
+  height: 750px;  /* ヘッダーが変な位置にくるから一旦設定した！ */
 }
-
 li {
   list-style: none;
 }
-
 .container {
   text-align: center;
 }
@@ -41,15 +35,14 @@ li {
 #full-width {
   width: 100%;
 }
-
 .text-area-field {
   vertical-align: top;
+
   textarea {
     height: 130px;
     padding: 10px;
   }
 }
-
 .round-image img {
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
   width:  80px;       /* ※縦横を同値に */
@@ -60,19 +53,18 @@ li {
   height: 50px;       /* ※縦横を同値に */
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
+
 /* header ----------------------------------------*/
 header {
   border: 1px solid black;
   height: 60px;
   background-color: black;
 }
-
 .header-logo {
   height: 100%;
   display: inline-block;
   margin-left: 18px;
 }
-
 .header-forms-area {
   /* レスポンシブで小さいサイズの時非表示にする */
   display: inline-block;
@@ -95,6 +87,7 @@ header {
   border-radius: 2px;
   padding-left: 5px;
   height: 32px;
+
   input{
     font-size: 23px;
   }
@@ -108,7 +101,6 @@ footer {
   position: absolute;
   bottom: 0;
 }
-
 .footer-wrap {
   width: 100%;
   height: 100%;
@@ -123,7 +115,6 @@ footer {
   width: 160px;
   height: 100%;
 }
-
 .header-right {
   display: block;
   height: 100%;
@@ -134,7 +125,6 @@ footer {
   font-size: 30px;
   color: white;
   margin-right: 10px;
-
 }
 .user-icon {
   color: gray;
@@ -142,7 +132,6 @@ footer {
   margin-right: 60px;
 }
 .header-user-image {
-
   margin-right: 60px;
 }
 .dropdown {
@@ -151,6 +140,7 @@ footer {
       margin-top: 3px;
   }
 }
+
 /* forms ----------------------------------------*/
 .form-wrap {
   display: inline-block;
@@ -159,6 +149,7 @@ footer {
   margin: 60px auto;
   padding: 30px 60px;
   text-align: center;
+
   h1, a {
     font-size: 16px;
   }
@@ -197,7 +188,6 @@ footer {
   padding: 8px 0px;
   margin: 20px 0px;
 }
-
 .submit-btn-profile {
   display: block;
   width: 90%;
@@ -220,7 +210,6 @@ footer {
   /* setting-pageのsubmit-btnの共通のpadding-bottomを打ち消すため */
   padding-bottom: 0px; 
 }
-
 
 /* alert ----------------------------------------*/
 .notification {
@@ -409,7 +398,6 @@ th {
 */
 
 /* Setting-Right ----------------------------------------*/
-
 .setting-wrap {
   display: flex;   /*並列になる*/
   flex-wrap: wrap;  /*直下が折り返す*/
@@ -417,8 +405,6 @@ th {
   width: 100%;
   height: 120%;
 }
-
-
 .setting-right {
   width: 80%;
   display: flex;
@@ -462,7 +448,6 @@ th {
   form {
     width: 100%;
   }
-
   input[type="text"],textarea {   /*入力フォーム*/
     width: 100%;
     box-sizing: border-box;   
@@ -472,7 +457,6 @@ th {
   }
   ul span:first-of-type {    /*見出し*/
     flex-basis: 150px;
-
   }
   ul span:nth-of-type(2) {
     flex-basis: 200px;
@@ -501,7 +485,6 @@ th {
   color: rgb(0, 179, 211)
 }
 .setting-left-content {
-
   width: 100%;
   padding-top: 50px;
 
@@ -513,13 +496,11 @@ th {
     flex-direction: column;
 
   }
-
   li {
     width:90%;
     height: 50px;
 
   }
-
   a {
     color: black;
     display: block;
@@ -528,7 +509,6 @@ th {
     width: 100%;
   }
 }
-
 
 /* booking --------------------------------------------*/
 .booking-wrap {
@@ -552,7 +532,6 @@ th {
   flex-basis: 600px;
 }
 .booking-right{
-
   flex-grow: 1;
   flex-shrink: 1;
   box-sizing: border-box;
@@ -573,27 +552,30 @@ th {
   grid-column: 1/2;
   text-align: center;
   position: relative;
+
   img, i {
+    color: gray;
     font-size: 60px;
     position: absolute;
     top:50%;
     left: 50%;
     transform : translate(-50%,-50%);
   }
-
 }
 .details-name {
   grid-row: 1/2;
   grid-column: 2/3;
   font-weight: bold;
-  p{
+
+  p {
     line-height: 50px;
   }
 }
 .details-address {
   grid-row: 2/3;
   grid-column: 2/3;
-  p{
+
+  p {
     line-height: 50px;
   }
 }
@@ -610,18 +592,20 @@ th {
 
 .booking-form{
   border: 1px solid gray;
-
-
 }
 #booking-form {
   width: 100%;
   border-radius: 0px;
-
+  
   li {
     padding: 15px 0px;
   }
   input {
     width: 100%;
+    border:1px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    height:35px;
+    padding-left: 10px;
   }
 }
   /*
