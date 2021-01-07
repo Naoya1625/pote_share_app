@@ -1,0 +1,46 @@
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .setting-left {
+    width: 100%;
+    height: 70px;
+    border-right: none;
+    border-bottom: 1px solid rgb(221, 221, 221);;
+  }
+  .setting-right {
+    width: 100%;
+    height: 100%;
+  }
+  .setting-left-content {
+    padding-top: 0px;
+
+    ul {
+      padding-left: 20px;
+      display: flex;
+      height: 100%;
+      width:100%;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      flex-direction: row;
+    }
+    li {
+      padding-top:10px;
+      height: 80%;
+      width: 100px;
+      text-align: center;
+    }
+
+  }
+
+  #setting-toggle {     /* 選択中のリンク */
+    border-right: none;
+    border-bottom: 3px solid rgb(0, 179, 211);
+    color: rgb(0, 179, 211)
+  }
+}/* ここまでがタブレット用CSS -------------------------------------*/
+
+
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+}

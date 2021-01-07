@@ -483,7 +483,7 @@ th {
 
 /* setting-Left ----------------------------------------*/
 .setting-left {
-  border: 1px solid black; /* 仮 */
+  border-right: 1px solid rgb(221, 221, 221);
   box-sizing: border-box;
   width: 20%;
   display: flex;
@@ -509,7 +509,7 @@ th {
   li {
     width:90%;
     height: 50px;
-    display: flex;
+
   }
 
   a {
