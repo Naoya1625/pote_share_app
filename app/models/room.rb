@@ -5,7 +5,7 @@ class Room < ApplicationRecord
   before_save   :set_room_introduction
   default_scope -> { order(created_at: :desc) }
   has_one_attached :image
-
+  validates :room_name, presence: true, uniqueness: { scope: :owner_id }
   validates :room_introduction, presence: true, length: { maximum: 80 }
 
 #  mount_uploader :image, ImageUploader

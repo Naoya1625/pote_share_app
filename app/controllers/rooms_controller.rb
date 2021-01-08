@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   #登録済みルーム一覧(未)
   #rooms  GET    /rooms
-  def index
+  def my_room
     @rooms = current_user.rooms
   end
 

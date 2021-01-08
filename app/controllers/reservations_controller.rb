@@ -1,8 +1,15 @@
 class ReservationsController < ApplicationController
   #予約済みルーム一覧
-  #reservations GET    /reservation
+  #reservations GET    /reservation      #reservations GET    /reservations(.:format)   reservations#index
   def index
-    @reservations = current_user.reservations
+    @reservations = Reservation.all
+
+    @rooms = Room.all
+    @users = User.all
+
+    #reservationを登録日時で並び替える必要あり！！！
+
+
   end
 
   #new_reservation GET    /reservations/new
@@ -26,8 +33,7 @@ class ReservationsController < ApplicationController
     @reservation.calculate_amount
 
     if @reservation.save
-
-      flash[:success] = "予約を確定しました。."
+      flash[:success] = "予約を確定しました"
       redirect_to rooms_url
     else
       render 'rooms/booking'
@@ -37,7 +43,8 @@ class ReservationsController < ApplicationController
   private
   def reservation_params
     params.permit(:start_date, :end_date,
-                                 :number_of_people, :reserving_user_id, :reserved_room_id )
+                  :number_of_people, :reserving_user_id,
+                  :reserved_room_id )
   end
-#.merge(reserving_user_id: current_user.id, reserved_room_id: params[:id])
+
 end

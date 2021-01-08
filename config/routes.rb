@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   #Room
   resources :rooms, except: [:edit, :show]
   get "booking/:id", to: "rooms#booking", as: "booking"
+  get "rooms/posts", to: "rooms#my_room", as: "my_room"
   post "reserve", to: "rooms#reserve"
 
   #Reservation
   resources :reservations, only: [:index, :new, :create]
-  #get "reservations", to: "reservations#index"
+
   #get "reservations/new", to: "reservations#new"
   
   #User
