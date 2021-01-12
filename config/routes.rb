@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   #User
   get 'users/show'
-  get 'users/edit'
+  get 'users/edit', to: "users/passwords#edit"
 
   #User(device)
   devise_for :users, controllers: {

@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :configure_permitted_parameters
   
-  #before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:account, :edit, :update, :destroy]
 
   def account
     @user = current_user

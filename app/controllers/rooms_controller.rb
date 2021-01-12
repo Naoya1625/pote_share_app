@@ -1,5 +1,8 @@
 class RoomsController < ApplicationController
-  #before_action :authenticate_user!
+  #before_action :authenticate_user!, only: [:my_room, :new, :create, :booking, :reserve]
+  before_action :authenticate_user!
+  #authenticated_user!メソッドは非認証ユーザがアクセスするとログイン画面にリダイレクトさせる。
+  #後で追加する、、、、かな？before_action :room_owner?, only: [:]
 
   #登録済みルーム一覧(未)
   #rooms  GET    /rooms
@@ -59,4 +62,5 @@ class RoomsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:reserving_user_id, :reserved_room_id)
   end
+
 end

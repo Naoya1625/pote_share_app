@@ -7,7 +7,9 @@ class Room < ApplicationRecord
   has_one_attached :image
   validates :room_name, presence: true, uniqueness: { scope: :owner_id }
   validates :room_introduction, presence: true, length: { maximum: 80 }
-
+  validates :address, presence: true, uniqueness: true
+  validates :price_per_person_per_night, presence: true
+  validates :owner_id, presence: true
 #  mount_uploader :image, ImageUploader
   validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
                       message: "有効な画像形式である必要があります" },
@@ -17,7 +19,6 @@ class Room < ApplicationRecord
   def display_image(width, height)
     image.variant(resize_to_limit: [width, height])
   end
-
 
   private
     #ルームの紹介文がnilなら空文字列を代入する(before_save)

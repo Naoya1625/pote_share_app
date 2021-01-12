@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
 #ログイン後のリダイレクト先指定
   def after_sign_in_path_for(resource)
-    users_profile_path
+    root_path
   end
 
 end
