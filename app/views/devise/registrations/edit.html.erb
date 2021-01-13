@@ -1,132 +1,37 @@
+<div class="password-form-wrap">
+  <div class="password-wrap">
+    <h3><%= t('.edit_account') %></h3>
+ 
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="setting-wrap">
-  <div class="setting-left">
-    <div class="setting-left-content">
-      <ul>
-        <li><%= link_to t('.account'), users_account_path %></li>
-        <li><%= link_to t('.profile'), users_profile_url, id:"setting-toggle" %></li>
-      </ul>
+      <div>
+        <%= f.label :email, t('.email'), class:"password-edit-label" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"password-form", placeholder: t('.please_enter_email') %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, t('.after_password') %> <i>( <%= t('.leave_blank_if_you_do_not_want_to_change_it') %> )</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"password-form" %>
+
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, t('.confirmation_password') %> <i>( <%= t('.leave_blank_if_you_do_not_want_to_change_it') %> )</i><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"password-form" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password %> <i></i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"password-form", placeholder: t('.please_enter_your_current_password') %>
+      </div>
+
+      <div class="actions password-edit-btn">
+        <%= f.submit t('.update') %>
+      </div>
+    <% end %>
+    <div class="password-edit-btn">
+      <%= link_to t('.back'), :back %>
     </div>
   </div>
-
-  <div class="setting-right">
-    <div class="setting-right-content">
-      <%= form_with model: @user, url: user_registration_path,local: true do |f| %>
-        <ul>
-          <li class="border-bottom-gray" id="setting-title">
-            <span><%= t('.profile') %></span>
-            <span></span>
-          </li>
-
-          <li class="border-bottom-gray font-bo ld round-image" id="setting-user-image">
-
-                        
-              <% if @user.image.attached? %>
-                <%= image_tag @user.display_image(50, 50) %>
-              <% else %>
-                <i class="setting-user-icon fas fa-user-circle"></i>
-              <% end %>
-
-
-          </li>
-
-          <li class="border-bottom-gray font-bold">
-            <span><%= t('.icon-image') %> <div class="required">必須</div></span>
-            <span><%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %></span>
-          </li>
-
-          <li class="border-bottom-gray font-bold">
-            <span><%= t('.name') %> <div class="required">必須</div></span>
-            <span><%= f.text_field :name, class:"#", id:"aaa" , value: current_user.name %></span>
-          </li>
-
-          <li class="border-bottom-gray font-bold">
-            <span><%= t('.introduction') %> <div class="required">必須</div></span>
-            <span><%= f.text_area :introduction, class:"#", id:"aaa" , value: current_user.introduction, placeholder:"自己紹介を入力" %></span>
-          </li>
-
-          <li id="setting-submit-btn">
-            <span><%= f.submit t('.update'), class:"submit-btn-profile" %></span>
-            <span></span>
-          </li>
-        </ul>
-      <% end %>
-    </div>  
-  </div>
-
-
-
-
-
-
-
-
 </div>
-
-
-
-<!-- ここからは旧html -->
-<%
-=begin%>
-<div class="setting-wrap">
-
-  <div class="setting-left">
-    <ul>
-      <li><%= link_to t('.account'), users_account_path, class:"setting-toggle" %></li>
-      <li><%= link_to t('.profile'), users_profile_url, class:"setting-toggle select-account" %></li>
-    </ul>
-  </div>
-
-  <div class="setting-right">
-    <div class="profile-table">
-      <%= form_with model: @user, url: user_registration_path,local: true do |f| %>
-        <table>
-          <tr class="table-title tr-border-bottom">
-            <th><%= t('.profile') %></th>
-            <td></td>
-          <tr class="icon-table tr-border-bottom">
-            <th colspan="2" class="round-image">                
-            <% if @user.image.attached? %>
-              <%= image_tag @user.image %>
-            <% else %>
-              <i class="setting-user-icon fas fa-user-circle"></i>
-            <% end %>
-            </th>
-          </tr>
-
-          <tr class="tr-border-bottom margin-top-10">
-            <th><%= t('.icon-image') %> <div class="required">必須</div></th>
-            <td><span class="image"><%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %></span></td>
-          </tr>
-
-          <tr class="tr-border-bottom">
-            <th><%= t('.name') %> <div class="required">必須</div></th>
-            <td>
-              <div class="left-justified">
-                <%= f.text_field :name, class:"form-field", id:"full-width" , value: current_user.name %>
-              </div>
-            </td>
-          </tr>
-
-          <tr class="tr-border-bottom text-area-field">
-            <th><%= t('.introduction') %> <div class="required">必須</div></th>
-            <td>
-              <div class="left-justified">
-                <%= f.text_area :introduction, class:"form-field", id:"full-width" , value: current_user.introduction, placeholder:"自己紹介を入力" %>
-              </div>
-            </td>
-          </tr>
-
-          <tr class="btn-table">
-            <th><%= f.submit t('.update'), class:"table-btn" %></th>
-            <td></ td>
-          </tr>
-        </table>
-      <% end %>
-    </div>  
-  </div>
-</div>
-
-<% 
-=end
-%>

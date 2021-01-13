@@ -4,7 +4,7 @@
     <div class="setting-left-content">
       <ul>
         <li><%= link_to t('.account'), users_account_path, id:"setting-toggle" %></li>
-        <li><%= link_to t('.profile'), users_profile_url %></li>
+        <li><%= link_to t('.profile'), users_profile_url, class:"select col-blue" %></li>
       </ul>
     </div>
   </div>
@@ -29,7 +29,7 @@
           </li>
 
           <li id="setting-submit-btn">
-            <span><%= link_to t('.edit'), users_edit_path, class:"submit-btn-account" %></span>
+            <span><%= link_to t('.edit'), edit_user_registration_path, class:"submit-btn-account col-white" %></span>
             <span></span>
           </li>
 

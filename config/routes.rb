@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   #User
   get 'users/show'
-  get 'users/edit', to: "users/passwords#edit"
+  #get 'users/edit', to: "users/passwords#edit"
 
   #User(device)
   devise_for :users, controllers: {
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/account' => 'users/registrations#account'
     patch 'users'    => 'users/registrations#update'
-    get 'users/profile' => 'users/registrations#edit'
+    get 'users/profile' => 'users/registrations#profile'    
   end
   patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
 

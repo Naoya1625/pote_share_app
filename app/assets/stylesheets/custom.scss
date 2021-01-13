@@ -17,8 +17,13 @@ body {
   box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
 }
 a:hover {
-  text-decoration: none !important; 
+  text-decoration: none !important;
+}
+.col-blue:hover {
   color: rgb(0, 179, 211) !important;
+}
+.col-white:hover {
+  color: white !important;
 }
 .wrap {
   height: 750px;  /* ヘッダーが変な位置にくるから一旦設定した！ */
@@ -162,6 +167,35 @@ footer {
   border-radius: 5px;
   margin-right: 10px;
 }
+.password-form-wrap {
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 30px;
+  label, i {
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+.password-wrap {
+  border: 1px solid rgb(221, 221, 221);
+  width:460px;
+  margin: 0 auto;
+  padding: 0px 90px 30px 90px;
+  border-radius: 5px;;
+
+  input {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    height: 28px;
+    margin-bottom: 10px;
+  }
+}
+.password-form {
+  width: 100%;
+}
+.password-edit-label {
+  font-size:14px;
+}
 .form-field {
   font-size: 16px;
   /* レスポンシブ対応で〇〇以下でwidth:100%みたいにする */
@@ -209,6 +243,36 @@ footer {
 #setting-submit-btn { 
   /* setting-pageのsubmit-btnの共通のpadding-bottomを打ち消すため */
   padding-bottom: 0px; 
+}
+.password-edit-btn {
+  border-radius: 5px;
+  width: 100%;
+  height: 28px;
+  input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(83, 178, 255);
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(83, 178, 255);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 100%;
+    transition: background-color 0.4s;
+  }
+  a:hover {
+    background-color: grey;
+  }
 }
 
 /* alert ----------------------------------------*/

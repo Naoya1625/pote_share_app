@@ -7,9 +7,10 @@ class User < ApplicationRecord
   #before_save :set_user_image
   before_save :set_introduction
   before_save :downcase_email
+  attr_accessor :current_password
 
   validates :name, presence: true
-  validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, presence: true, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 

@@ -109,6 +109,16 @@ ja:
     registrations:
       destroyed: アカウントを削除しました。またのご利用をお待ちしております。
       edit:
+        edit_account: アカウント編集
+        email: メールアドレス
+        after_password: 変更後パスワード
+        current_password: 現在のパスワード
+        confirmation_password: パスワード確認用
+        please_enter_email: メールアドレスを入力してください
+        please_enter_your_current_password: 現在のパスワードを入力
+        update: 更新
+        back: 戻る
+        leave_blank_if_you_do_not_want_to_change_it: 変更する場合のみ入力
         are_you_sure: 本当によろしいですか?
         cancel_my_account: アカウント削除
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
@@ -126,7 +136,7 @@ ja:
       update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。
       updated: アカウント情報を変更しました。
       updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度ログインしてください。
-      edit: 
+      profile: 
         name: 名前
         profile: プロフィール
         account: アカウント
