@@ -3,6 +3,7 @@ class Reservation < ApplicationRecord
   belongs_to :reserved_room, class_name: "Room"
   validates :reserving_user_id, presence: true
   validates :reserved_room_id, presence: true
+
   attr_accessor :amount
 
   #予約の日数、人数から合計金額を計算し、DBに記憶する. そして、終了日より開始日が後になっていたらfalseを返す。
@@ -19,7 +20,8 @@ class Reservation < ApplicationRecord
     
     return false if ( days <= 0 )    #終了日より開始日が後になっていたらfalseを返す
 
-    amount = Room.find(self.reserved_room_id).price_per_person_per_night * number_of_people * days #合計金額=1日あたりの金額*人数*日数
+    #合計金額=1日あたりの金額*人数*日数
+    amount = Room.find(self.reserved_room_id).price_per_person_per_night * number_of_people * days 
     self.amount=(amount)
   end
 

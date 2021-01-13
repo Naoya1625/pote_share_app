@@ -46,7 +46,7 @@ class RoomsController < ApplicationController
   #reserve POST   /reserve
   def reserve
     @room = Reservation.build(reservation_params)
-    if room.save
+    if @room.save
       flash[:success] = "せいこうううう"
       redirect_to root_url
     end
@@ -60,7 +60,7 @@ class RoomsController < ApplicationController
                                  :room_introduction)
   end
   def reservation_params
-    params.require(:reservation).permit(:reserving_user_id, :reserved_room_id)
+    params.require(:reservation).permit(:reserving_user_id, :reserved_room_id, :start_date, :end_date, :number_of_people)
   end
 
 end

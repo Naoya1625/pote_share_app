@@ -45,6 +45,16 @@ ja:
       end_date: 終了日
       number_of_people: 人数
       reserve: 予約する
+  reservations:
+    index:
+      list_of_reserved_rooms: 予約済みルーム一覧
+      room_image: ルーム画像
+      room_name: ルーム名
+      room_introduction: ルーム紹介
+      amount: 合計料金
+      start_date: 開始日
+      end_date: 終了日
+      reservation_time: 予約確定日時
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

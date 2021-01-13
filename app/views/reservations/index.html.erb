@@ -1,5 +1,44 @@
-<h1>Reservations#index</h1>
 <!-- ルーム画像	ルーム名	ルーム紹介	合計料金	開始日	終了日	予約確定日時 -->
+<div class="res-wrap">
+  <div class="res-room-wrap">
+  <h4><%= t('.list_of_reserved_rooms') %></h4>
+    <div class="res-content">
+      <table>
+        <tr class="res-th">
+          <th class="res-room-image"><%= t('.room_image') %></th>
+          <th class="res-room-name"><%= t('.room_name') %></th>
+          <th class="res-room-introduction"><%= t('.room_introduction') %></th>
+          <th class="res-amount"><%= t('.amount') %></th>
+          <th class="res-start"><%= t('.start_date') %></th>
+          <th class="res-end"><%= t('.end_date') %></th>
+          <th class="res-create-date"><%= t('.reservation_time') %></th>
+        </tr>
+      </table>
+
+      <table>
+        <% @reservations.each do |reservation| %>
+          <% room = @rooms.find(reservation.reserved_room_id) %>
+          <tr class="res-td">
+            <td class="res-room-image"><%= image_tag room.display_image(100, 80) %></td>
+            <td class="res-room-name"><%= link_to room.room_name, booking_path(room),class:"col-blue" %></td>
+            <td class="res-room-introduction"><%= room.room_introduction %></td>
+            <td class="res-amount"><%= reservation.amount %></td>
+            <td class="res-start"><%= reservation.start_date %></td>
+            <td class="res-end"><%= reservation.end_date %></td>
+            <td class="res-create-date"><%= simple_time(reservation.created_at) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+
+
+<%
+=begin
+%>
 <% @reservations.each do |reservation| %>
     <% room = @rooms.find(reservation.reserved_room_id) %>
   <ul>
@@ -12,3 +51,6 @@
     <li><%= reservation.created_at %></li>
   </ul>
 <% end %>
+<%
+=end
+%>

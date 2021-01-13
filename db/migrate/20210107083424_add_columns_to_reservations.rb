@@ -4,5 +4,5 @@ class AddColumnsToReservations < ActiveRecord::Migration[6.0]
     add_column :reservations, :end_date, :date, null: false 
     add_column :reservations, :number_of_people, :integer, null: false 
     add_column :reservations, :amount, :integer
-  end
 end
+

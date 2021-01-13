@@ -39,7 +39,7 @@
     <!-- ここからは予約画面右側 -->
     <div class="booking-right">
         <div class="setting-right-content" id="booking-form">
-          <%= form_with model: @reservation, url: reservations_path, local: true do |f| %>
+          <%= form_with model: @reservation, url: reserve_path, method: :post, local: true do |f| %>
             <ul>
           <%= f.hidden_field :reserving_user_id, value: current_user.id %> <!-- attendancesテーブルのidを渡す -->
           <%= f.hidden_field :reserved_room_id, value: @room.id %>
@@ -61,7 +61,7 @@
                 <span><%= t('.number_of_people') %></span>
                 <span><%= f.number_field :number_of_people %></span>
               </li>
-
+              <% f.hidden_field :amount, value: 3200 %>
               <li>
                 <%= f.submit t('.reserve'), class:"submit-btn-profile" %>
               </li>

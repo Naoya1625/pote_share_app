@@ -56,12 +56,3 @@ today = Date.today
   reservation.update_attribute(:created_at, created_at)
   
 end
-
-=begin
-Reservation.all.each do |reservation|
-   res = reservation
-   amount = (res.id * 100)
-   res.amount=(amount)
-   res.save!
-end
-=end
