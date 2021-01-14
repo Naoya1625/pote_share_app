@@ -48,7 +48,7 @@ ja:
     create:
       room_was_successfully_created: ルーム登録を完了しました
   reservations:
-    confirmation:
+    confirm:
       confirmation_of_reservation_details: 予約内容確認
       day: 日
       start_date: 開始日

@@ -11,39 +11,32 @@ class ReservationsController < ApplicationController
 
   #confirm   POST   "/reservations/confirm"
   def confirm
-    @user = current_user
     @reservation = Reservation.new(reservation_confirm_params)
     @room = Room.find(@reservation.reserved_room_id)
     @reservation.calculate_amount
+    binding.pry
     render "rooms/booking" if @reservation.invalid?
-    render :confirmation
   end
   #confirmation get "/reservations/confirmation"
-  def confirmation
+  #def confirmation
     #@user = current_user
     #@reservation = Reservation.new(reservation_confirm_params) renderしてるからいらないのか。。？
     #@room = Room.find(@reservation.reserved_room_id)
 
-  end
+  #end
 
 
   #reserve POST   /reserve
   def create
-#     binding.pry
     @reservation = Reservation.new(reservation_params)
-#     binding.pry
     if params[:back]
       render "rooms/booking"
-#      binding.pry
     elsif @reservation.save
       flash[:notice] = t('.reservation_was_successfully_created.')
-#      binding.pry
       redirect_to reservations_url
     else
       render "rooms/booking"
-#      binding.pry
     end
-#    binding.pry
   end
 =begin
   #reservations  POST   /reservations
