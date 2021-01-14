@@ -2,9 +2,6 @@
 <div class="res-wrap">
   <div class="res-room-wrap">
   <h4><%= t('.list_of_reserved_rooms') %></h4>
-  <div class="reservation-pagination">
-    <%= paginate @reservations %>
-  </div>
     <div class="res-content">
       <table>
         <tr class="res-th">
@@ -38,21 +35,3 @@
 </div>
 
 
-<%
-=begin
-%>
-<% @reservations.each do |reservation| %>
-    <% room = @rooms.find(reservation.reserved_room_id) %>
-  <ul>
-    <li><%= room.image %></li>
-    <li><%= room.room_name %></li>
-    <li><%= room.room_introduction %></li>
-    <li><%= reservation.amount %></li>
-    <li><%= reservation.start_date %></li>
-    <li><%= reservation.end_date %></li>
-    <li><%= reservation.created_at %></li>
-  </ul>
-<% end %>
-<%
-=end
-%>

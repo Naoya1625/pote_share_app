@@ -3,7 +3,6 @@
 
 /* common ----------------------------------------*/
 html {
-  height: 100%;
   width: 100%;
 }
 body {
@@ -12,8 +11,12 @@ body {
   position:relative;
   display: flex;
   flex-direction: column;
-  min-height: 120vh;
+  min-height: 100vh;
   box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+  padding-bottom: 130px;/*←footerの高さ*/
+  .wrap { 
+    height: 100%;
+  }
 }
 a:hover {
   text-decoration: none !important;
@@ -24,9 +27,7 @@ a:hover {
 .col-white:hover {
   color: white !important;
 }
-.wrap {
-  height: 1200px;  /* ヘッダーが変な位置にくるから一旦設定した！ */
-}
+
 li {
   list-style: none;
 }
@@ -106,7 +107,7 @@ footer {
   height: 130px;
   width: 100%;
   position: absolute;
-  bottom: -130px; /* footerの高さの分だけ下に下げる */
+  bottom: 0px; /* footerの高さの分だけ下に下げる */
 }
 .footer-wrap {
   width: 100%;
@@ -496,6 +497,7 @@ th {
 }
 .setting-right {
   width: 80%;
+  height: 100%;
   display: flex;
   box-sizing: border-box;
   justify-content: center;
@@ -509,6 +511,7 @@ th {
 }
 .setting-right-content {
   margin-bottom: auto;
+  margin-bottom: 30%;
   padding: 10px;
   border: 1px solid rgb(221, 221, 221); /* 仮 */
   border-radius: 5px;

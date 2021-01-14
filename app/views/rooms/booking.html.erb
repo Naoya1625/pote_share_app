@@ -75,32 +75,3 @@
 
 
 </div>
-
-<%
-=begin%>
-        <table>
-          <tr class="height-20">
-            <td rowspan="2" class="boooking-owner-image">
-              <% if @user.image.attached? %>
-                <%= image_tag @room.owner.display_image(50, 50) %>
-              <% else %>
-                <i class="setting-user-icon fas fa-user-circle"></i>
-              <% end %>
-            </td>
-            <td class="booking-details-title"><%= @room.room_name %></td>
-          </tr> 
-
-          <tr class="height-20">
-
-            <td class="booking-details-content"><%= @room.address %></td>
-          </tr>
-
-          <tr>
-            <td colspan="2" class=""><%= @room.room_introduction %></td>
-
-          </tr>
-        
-        </table>
-<%
-=end
-%>

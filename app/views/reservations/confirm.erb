@@ -6,6 +6,7 @@
       <%= form_with model: @reservation, url: reserve_path, method: :post, local: true do |f| %>
         <%= f.hidden_field :reserving_user_id, :value => current_user.id %>
         <%= f.hidden_field :reserved_room_id, :value => @room.id %>
+        <%= f.hidden_field :number_of_people, :value => @reservation.number_of_people %>
 
         <p><%= t('.start_date') %></p>
         <%= f.text_field :start_date, :value => @reservation.start_date, readonly: true %>

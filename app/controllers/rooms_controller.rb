@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   #before_action :authenticate_user!, only: [:my_room, :new, :create, :booking, :reserve]
   before_action :authenticate_user!
   #authenticated_user!メソッドは非認証ユーザがアクセスするとログイン画面にリダイレクトさせる。
-  #後で追加する、、、、かな？before_action :room_owner?, only: [:]
+  #後で追加する？before_action :room_owner?, only: [:]
 
   #登録済みルーム一覧(未)
   #rooms  GET    /rooms
@@ -23,7 +23,6 @@ class RoomsController < ApplicationController
     if @room.save
       #flash-message多言語化すること
       flash[:success] = t('.room_was_successfully_created')
-      #とりあえずroot
       redirect_to booking_url(@room)
     else
       render :new
@@ -35,13 +34,6 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @user = User.find(@room.owner_id)
   end
-
-
-  # get "rooms/newなんちゃら" ここの確定を押すと正式に予約が作られる     ←違う！
-   #予約確認画面
-  #def new
-  #  @reservation = Reservation
-  #end
 
   #reserve POST   /reserve
   def reserve
