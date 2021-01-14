@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
     @room.image.attach(params[:room][:image])  #fileが未選択だとエラーになる。
     if @room.save
       #flash-message多言語化すること
-      flash[:success] = "Room was successfully created."
+      flash[:success] = t('.room_was_successfully_created')
       #とりあえずroot
       redirect_to booking_url(@room)
     else

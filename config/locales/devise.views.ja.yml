@@ -45,7 +45,21 @@ ja:
       end_date: 終了日
       number_of_people: 人数
       reserve: 予約する
+    create:
+      room_was_successfully_created: ルーム登録を完了しました
   reservations:
+    confirmation:
+      confirmation_of_reservation_details: 予約内容確認
+      day: 日
+      start_date: 開始日
+      end_date: 終了日
+      number_of_people: 人数
+      amount: 合計金額
+      person: 人
+      days_of_use: 使用日数
+      if_you_are_satisfied_with_the_above_contents_please_press_confirm_reservation: 上記内容でよろしければ「予約を確定」を押してください
+      confirm_reservation: 予約を確定
+      back: ルーム詳細に戻る
     index:
       list_of_reserved_rooms: 予約済みルーム一覧
       room_image: ルーム画像
@@ -55,6 +69,8 @@ ja:
       start_date: 開始日
       end_date: 終了日
       reservation_time: 予約確定日時
+    create:
+      confirmed_reservation: 予約を確定しました
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

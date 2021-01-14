@@ -2,39 +2,76 @@ class ReservationsController < ApplicationController
   #予約済みルーム一覧
   #reservations GET    /reservation      #reservations GET    /reservations(.:format)   reservations#index
   def index
-
-    @reservations = Reservation.all.order(created_at: :asc)
-
+    @reservations = Reservation.all.page(params[:page]).per(10).order(created_at: :asc)
     @rooms = Room.all
     @users = User.all
+  end
 
+
+
+  #confirm   POST   "/reservations/confirm"
+  def confirm
+    @user = current_user
+    @reservation = Reservation.new(reservation_confirm_params)
+    @room = Room.find(@reservation.reserved_room_id)
+    @reservation.calculate_amount
+    render "rooms/booking" if @reservation.invalid?
+    render :confirmation
+  end
+  #confirmation get "/reservations/confirmation"
+  def confirmation
+    #@user = current_user
+    #@reservation = Reservation.new(reservation_confirm_params) renderしてるからいらないのか。。？
+    #@room = Room.find(@reservation.reserved_room_id)
 
   end
 
-  #new_reservation GET    /reservations/new
-  def new
 
+  #reserve POST   /reserve
+  def create
+#     binding.pry
+    @reservation = Reservation.new(reservation_params)
+#     binding.pry
+    if params[:back]
+      render "rooms/booking"
+#      binding.pry
+    elsif @reservation.save
+      flash[:notice] = t('.reservation_was_successfully_created.')
+#      binding.pry
+      redirect_to reservations_url
+    else
+      render "rooms/booking"
+#      binding.pry
+    end
+#    binding.pry
   end
-
+=begin
   #reservations  POST   /reservations
   def create
 
     @reservation = Reservation.new(reservation_params)
     
     @reservation.calculate_amount #合計金額を計算しamount属性をセット
+
     if @reservation.save
-      flash[:success] = "予約を確定しました"
+      flash[:success] = t('.confirmed_reservation')
       redirect_to reservations_url
     else
       render 'rooms/booking'
     end
   end
-
+=end
   private
-  def reservation_params
+
+  def reservation_confirm_params
     params.permit(:start_date, :end_date,
                   :number_of_people, :reserving_user_id,
                   :reserved_room_id )
+  end
+  def reservation_params
+    params.permit(:start_date, :end_date,
+                  :number_of_people, :reserving_user_id,
+                  :reserved_room_id, :amount)
   end
 
 end

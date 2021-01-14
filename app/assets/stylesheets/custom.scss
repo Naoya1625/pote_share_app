@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 120vh;
-  /*padding-bottom: 130px; /* footerの高さ */
   box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
 }
 a:hover {
@@ -76,6 +75,7 @@ header {
   position: absolute;
   top: 15px;
   background-color: white;
+  border-radius: 5px;
 }
 .header-forms-keyword {
   /* レスポンシブで小さいサイズの時非表示にする */
@@ -84,6 +84,7 @@ header {
   top: 15px;
   left: 420px;
   background-color: white;
+  border-radius: 5px;
 }
 .header-search {
   margin-top: 0;
@@ -94,17 +95,18 @@ header {
   height: 32px;
 
   input{
-    font-size: 23px;
+    font-size: 14px;
   }
 }
 
 /* footer ----------------------------------------*/
 footer {
+  display: block;
   background-color: black;
   height: 130px;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -130px; /* footerの高さの分だけ下に下げる */
 }
 .footer-wrap {
   width: 100%;
@@ -274,7 +276,30 @@ footer {
     background-color: grey;
   }
 }
+.confirm-btn {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+.confirm-submit-btn {
+  background-color: rgb(83, 178, 255);
+  margin-top: 20px;
+  transition: background-color 0.4s;
+}
+.confirm-submit-btn:hover {
+  background-color: rgb(26, 145, 243);
 
+}
+.confirm-back-btn {
+  background-color: rgb(168, 167, 167);
+  transition: background-color 0.4s;
+  margin-top: 10px;
+}
+.confirm-back-btn:hover {
+    background-color: gray;;
+}
 /* alert ----------------------------------------*/
 .notification {
   width: 100%;
@@ -467,7 +492,7 @@ th {
   flex-wrap: wrap;  /*直下が折り返す*/
   box-sizing: border-box;
   width: 100%;
-  height: 120%;
+  height: 100%;
 }
 .setting-right {
   width: 80%;
@@ -689,13 +714,15 @@ th {
 }
 .res-room-wrap {
   max-width: 1000px;
-  border: 1px solid rgb(238, 148, 148);
-
+  min-width: 700px;
   min-width: 500px;
+  padding-left: 30px;
+  h4 {
+    margin-bottom:20px;
+  }
 }
 
 .res-content {
-  border: 1px solid rgb(132, 132, 233);
   table {
     width: 100%;
   }
@@ -706,14 +733,12 @@ th {
     margin: 0px;
     border-top: 1px solid rgb(221,221,221);
     border-bottom:1px solid rgb(221,221,221);
-    border-right: 1px solid gray; /*仮*/
   }
   td {
     height: 100px;
     box-sizing: border-box;
     padding:5px;
     border-bottom: 1px solid rgb(221,221,221);
-    border-right: 1px solid gray; /*仮*/
   }
   table tr:nth-child(even) td {
     background-color: rgb(245, 245, 245); /* tableの偶数行にのみ背景色指定 */
@@ -740,6 +765,54 @@ th {
 .res-create-date{
   width: 20%;
 }
+/* confirmation */
+.confirmation-wrap {
+  width: 100%;
+
+}
+.confirm-content {
+  width: 400px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
+  margin: 30px auto;
+  padding: 4px 16px 16px 16px;
+  h4, h5{
+    font-weight: normal;
+  }
+  h4 {
+    border-bottom: 1px solid rgb(221,221,221);
+    padding-bottom:10px;
+  }
+}
+.confirm-details {
+  font-size: 12px;
+  p {
+    padding: 8px 0px;
+    margin-bottom: 0px;
+  }
+  input[type="text"]{
+    width: 100%;
+    border-radius: 5px;;
+    background-color: rgb(233, 232, 232);
+    border: 1px solid rgb(160, 159, 159);
+    height: 30px;
+    padding-left:10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* notification ----------------------------------------*/
+.alert {
+  height: 8px;
+  font-size: 8px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 /* ちょい足しcss ----------------------------------------*/
 .border-bottom-gray {

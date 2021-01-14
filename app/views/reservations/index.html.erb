@@ -2,6 +2,9 @@
 <div class="res-wrap">
   <div class="res-room-wrap">
   <h4><%= t('.list_of_reserved_rooms') %></h4>
+  <div class="reservation-pagination">
+    <%= paginate @reservations %>
+  </div>
     <div class="res-content">
       <table>
         <tr class="res-th">
@@ -29,7 +32,6 @@
           </tr>
         <% end %>
       </table>
-
 
     </div>
   </div>

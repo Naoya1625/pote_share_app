@@ -6,7 +6,7 @@ class Room < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   has_one_attached :image
   validates :room_name, presence: true, uniqueness: { scope: :owner_id }
-  validates :room_introduction, presence: true, length: { maximum: 80 }
+  validates :room_introduction, presence: true, length: { maximum: 50 }
   validates :address, presence: true, uniqueness: true
   validates :price_per_person_per_night, presence: true
   validates :owner_id, presence: true
