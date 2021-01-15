@@ -24,12 +24,17 @@ class ReservationsController < ApplicationController
     if params[:back]
       render "rooms/booking"
     elsif @reservation.valid?
-      binding.pry              
+      binding.pry
       flash[:notice] = t('.reservation_was_successfully_created.')
-      redirect_to reservations_url
+      redirect_to reservation_url(@reservation)
     else
       render "rooms/booking"
     end
+  end
+
+  #reservation   get   /reservation/:id
+  def show
+
   end
 
   private
