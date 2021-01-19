@@ -710,12 +710,12 @@ th {
     border: 1px solid rgb(225, 228, 92);
   }
 */
-/* 予約済みルーム一覧 ----------------------------------------*/
-.res-wrap {
+/* 予約済みルーム一覧 & 登録済みルーム一覧 ----------------------------------------*/
+.res-wrap, .reg-wrap{
   width: 100%;
   padding: 20px 10px;
 }
-.res-room-wrap {
+.res-room-wrap, .reg-room-wrap {
   max-width: 1000px;
   min-width: 700px;
   min-width: 500px;
@@ -725,7 +725,7 @@ th {
   }
 }
 
-.res-content {
+.res-content, .reg-content {
   table {
     width: 100%;
   }
@@ -733,6 +733,7 @@ th {
     font-size: 10px;
     height: 30px;
     text-align: center;
+    box-sizing: border-box;
     margin: 0px;
     border-top: 1px solid rgb(221,221,221);
     border-bottom:1px solid rgb(221,221,221);
@@ -747,28 +748,55 @@ th {
     background-color: rgb(245, 245, 245); /* tableの偶数行にのみ背景色指定 */
   }
 }
-
+/* 予約済みルーム */
 .res-room-image {
   width: 15%;
   text-align: center;
-
 }
 .res-room-name {
   width: 15%;
   font-weight: bold;
-  
+  text-align: center;
 }
 .res-room-introduction {
   width: 20%;
   font-size: 12px;
+  text-align: center;
 }
 .res-amount, .res-start, .res-end {
   width: 10%;
+  text-align: center;
 }
 .res-create-date{
   width: 20%;
+  text-align: center;
 }
-/* confirmation */
+
+/*登録済みルーム*/
+.reg-room-image {
+  width: 25%;
+  text-align: center;
+}
+.reg-room-name {
+  width: 15%;
+  font-weight: bold;
+  text-align: center;
+}
+.reg-room-introduction {
+  width: 30%;
+  font-size: 12px;
+  text-align: center;
+}
+.reg-price {
+  width: 10%;
+  text-align: center;
+}
+.reg-create-date{
+  width: 20%;
+  text-align: center;
+}
+
+/* confirmation ------------------------------*/
 .confirmation-wrap {
   width: 100%;
 

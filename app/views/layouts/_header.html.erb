@@ -31,7 +31,7 @@
         <ul class="dropdown-menu dropdown-menu-right">
           <li><%= link_to "ルーム登録", new_room_path %></li>
           <li><%= link_to "予約済みルーム一覧", reservations_path %></li>
-          <li><%= link_to "登録済みルーム一覧", my_room_path %></li>
+          <li><%= link_to "登録済みルーム一覧", rooms_posts_path %></li>
           <li><%= link_to "設定", users_account_path %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         </ul>

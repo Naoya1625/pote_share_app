@@ -1,0 +1,31 @@
+<!-- ルーム画像	ルーム名	ルーム紹介	料金	作成日 -->
+<div class="reg-wrap">
+  <div class="reg-room-wrap">
+  <h4><%= t('.list_of_registrated_rooms') %></h4>
+    <div class="reg-content">
+      <table>
+        <tr class="reg-th">
+          <th class="reg-room-image"><%= t('.room_image') %></th>
+          <th class="reg-room-name"><%= t('.room_name') %></th>
+          <th class="reg-room-introduction"><%= t('.room_introduction') %></th>
+          <th class="reg-price"><%= t('.price') %></th>
+          <th class="reg-create-date"><%= t('.created_at') %></th>
+        </tr>
+      </table>
+
+      <table>
+        <% @rooms.each do |room| %>
+          <tr class="reg-td">
+            <td class="reg-room-image"><%= image_tag room.display_image(100, 80) %></td>
+            <td class="reg-room-name"><%= link_to room.room_name, booking_path(room), class:"col-blue" %></td>
+            <td class="reg-room-introduction"><%= room.room_introduction %></td>
+            <td class="reg-price"><%= room.price_per_person_per_night %></td>
+            <% time = room.created_at %>
+            <td class="res-create-date"><%= time.strftime("%Y/%m/%d") %><p><%= time.strftime("%H:%M") %></p></td>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>

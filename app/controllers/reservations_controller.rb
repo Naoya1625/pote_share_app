@@ -18,8 +18,7 @@ class ReservationsController < ApplicationController
     if @reservation && @amount = @reservation.calculate_amount
       #@amountに合計金額をいれた結果、値が入っているなら。
       return
-    else
-      #合計金額がfalseなら
+    elsif @reservation.invalid?
       flash[:danger] = t('.the_reservation_was_not_created_successfully')
       redirect_to booking_url(@room)
     end

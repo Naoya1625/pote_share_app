@@ -1,5 +1,0 @@
-<h1>予約済みルーム一覧</h1>
-
-<% @rooms.each do |room| %>
-  <p><%= link_to room.room_name, booking_path(room) %></p>
-<% end %>

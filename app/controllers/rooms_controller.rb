@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
 
   #登録済みルーム一覧(未)
   #rooms  GET    /rooms
-  def my_room
+  def posts
     @rooms = current_user.rooms
   end
 

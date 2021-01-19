@@ -25,7 +25,8 @@
             <td class="res-amount"><%= reservation.amount %></td>
             <td class="res-start"><%= reservation.start_date %></td>
             <td class="res-end"><%= reservation.end_date %></td>
-            <td class="res-create-date"><%= simple_time(reservation.created_at) %></td>
+            <% time = reservation.created_at %>
+            <td class="res-create-date"><%= time.strftime("%Y/%m/%d") %><p><%= time.strftime("%H:%M") %></p></td>
           </tr>
         <% end %>
       </table>

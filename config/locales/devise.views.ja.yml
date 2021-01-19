@@ -39,7 +39,14 @@ ja:
       address: 住所
       room_image: ルーム画像
       registration: 登録
-    booking:
+    booking:      
+      registration_room: ルーム情報登録
+      room_name: ルーム名
+      room_introduction: ルーム紹介
+      price: 料金
+      address: 住所
+      room_image: ルーム画像
+      registration: 登録
       day: 日
       start_date: 開始日
       end_date: 終了日
@@ -48,6 +55,13 @@ ja:
     create:
       room_was_successfully_created: ルーム登録を完了しました
       room_save_failed: ルーム登録に失敗しました
+    posts:
+      list_of_registrated_rooms: 登録済みルーム一覧
+      room_image: ルーム画像
+      room_name: ルーム名
+      room_introduction: ルーム紹介
+      price: 料金
+      created_at: 作成日
   reservations:
     confirm:
       confirmation_of_reservation_details: 予約内容確認
