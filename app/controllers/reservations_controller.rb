@@ -11,10 +11,18 @@ class ReservationsController < ApplicationController
 
   #confirm   POST   "/reservations/confirm"
   def confirm
+
     @reservation = Reservation.new(reservation_confirm_params)
+    @user = current_user
     @room = Room.find(@reservation.reserved_room_id)
-    @reservation.calculate_amount
-    render "rooms/booking" if @reservation.invalid?
+    if @reservation && @amount = @reservation.calculate_amount
+      #@amountに合計金額をいれた結果、値が入っているなら。
+      return
+    else
+      #合計金額がfalseなら
+      flash[:danger] = t('.the_reservation_was_not_created_successfully')
+      redirect_to booking_url(@room)
+    end
   end
 
   #reserve POST   /reserve
@@ -24,8 +32,7 @@ class ReservationsController < ApplicationController
     if params[:back]
       render "rooms/booking"
     elsif @reservation.valid?
-      binding.pry
-      flash[:notice] = t('.reservation_was_successfully_created.')
+      flash[:notice] = t('.reservation_was_successfully_created')
       redirect_to reservation_url(@reservation)
     else
       render "rooms/booking"
@@ -42,12 +49,13 @@ class ReservationsController < ApplicationController
   def reservation_confirm_params
     params.permit(:start_date, :end_date,
                   :number_of_people, :reserving_user_id,
-                  :reserved_room_id )
+                  :reserved_room_id)
   end
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date,
                   :number_of_people, :reserving_user_id,
                   :reserved_room_id, :amount)
   end
+
 
 end

@@ -40,9 +40,10 @@
     <div class="booking-right">
         <div class="setting-right-content" id="booking-form">
           <%= form_with model: @reservation, url: confirm_path, method: :post, local: true do |f| %>
+
             <ul>
-          <%= f.hidden_field :reserving_user_id, value: current_user.id %> <!-- attendancesテーブルのidを渡す -->
-          <%= f.hidden_field :reserved_room_id, value: @room.id %>
+            <%= f.hidden_field :reserving_user_id, value: current_user.id %> <!-- attendancesテーブルのidを渡す -->
+            <%= f.hidden_field :reserved_room_id, value: @room.id %>
               <li>
                 <span>¥ <%= @room.price_per_person_per_night %> / <%= t('.day') %></span>
               </li>

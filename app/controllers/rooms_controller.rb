@@ -25,6 +25,7 @@ class RoomsController < ApplicationController
       flash[:success] = t('.room_was_successfully_created')
       redirect_to booking_url(@room)
     else
+      flash[:danger] = t('.room_save_failed')
       render :new
     end
   end

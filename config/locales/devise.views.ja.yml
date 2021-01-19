@@ -47,6 +47,7 @@ ja:
       reserve: 予約する
     create:
       room_was_successfully_created: ルーム登録を完了しました
+      room_save_failed: ルーム登録に失敗しました
   reservations:
     confirm:
       confirmation_of_reservation_details: 予約内容確認
@@ -58,8 +59,10 @@ ja:
       person: 人
       days_of_use: 使用日数
       if_you_are_satisfied_with_the_above_contents_please_press_confirm_reservation: 上記内容でよろしければ「予約を確定」を押してください
+      with_start_date_the_end_date_is_reversed: 開始日が終了日より後の日付になっていますううううううううう
       confirm_reservation: 予約を確定
       back: ルーム詳細に戻る
+      the_reservation_was_not_created_successfully: ルームの予約に失敗しました
     index:
       list_of_reserved_rooms: 予約済みルーム一覧
       room_image: ルーム画像
@@ -70,7 +73,8 @@ ja:
       end_date: 終了日
       reservation_time: 予約確定日時
     create:
-      confirmed_reservation: 予約を確定しました
+
+      reservation_was_successfully_created: 予約を確定しました
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
