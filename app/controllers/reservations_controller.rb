@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
 
   #reservation   get   /reservation/:id
   def show
-
+    @reservation = Reservation.find(params[:id])
   end
 
   private

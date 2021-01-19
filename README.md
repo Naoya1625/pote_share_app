@@ -26,6 +26,10 @@ $ cd poteshare_fin
 
 $ bundle install
 
+・yarnをインストールします。
+
+$ yarn install --check-files
+
 ・データベースを移行します。
 
 $ rails db:migrate

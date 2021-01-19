@@ -3,23 +3,19 @@
       <ul class="show-ul">
         <li class="border-bottom-gray font-bold">
           <span><%= t('.email') %></span>
-          <span><%= current_user.email %></span>
+          <span><%= @reservation.amount %></span>
         </li>
 
         <li class="border-bottom-gray font-bold">
           <span><%= t('.password') %></span>
-          <span><%= "*" * 10 %></span>
+          <span><%= @reservation.reserving_user.name %></span>
         </li>
 
         <li class="border-bottom-gray font-bold">
           <span><%= t('.password') %></span>
-          <span><%= "*" * 10 %></span>
+          <span><%= @reservation.reserved_room.room_name %></span>
         </li>
 
-        <li class="font-bold">
-          <span><%= t('.password') %></span>
-          <span><%= "*" * 10 %></span>
-        </li>
       </ul>
 
   </div>
