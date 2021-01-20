@@ -2,10 +2,12 @@
 @media screen and (max-width: 960px) {
   /* 960px以下に適用されるCSS（タブレット用） */
   /* Header --------------------------*/
-  .header-forms-area,.header-forms-keyword {
+  .header-search-area, .header-search-keyword {
     display: none;
   }
-
+  .header-left {
+    width: 300px
+  }
   /* btn --------------------------*/
   .submit-btn-profile,.submit-btn-account {
     width: 100%;
@@ -84,7 +86,7 @@
 
 
 @media screen and (max-width: 480px) {
-  /* 480px以下に適用されるCSS（スマホ用） */
+  /* 480px以下に適用されるCSS */
   /* Header --------------------------*/
   .login-user-name {
     display: none;

@@ -1,19 +1,23 @@
 <header>
-  <div class="header-logo">
-    <%= link_to image_tag("pote_share_logo.png", class:"header-logo" ), root_path %>  
-  </div>
+  <div class="header-left">
+    <div class="header-logo">
+      <%= link_to image_tag("pote_share_logo.png", class:"header-logo" ), root_path %>  
+    </div>
+    
+    <%= form_with(scope: :search, url: rooms_search_path, method: :get, local: true, class:"header-form") do |f| %>
 
-  <div class="header-forms-area">
-    <div class="header-search">
-      <i class="fas fa-map-marker-alt"></i>
-      <input type="text" class="search-form" placeholder="エリア">
-    </div>
-  </div>
-  <div class="header-forms-keyword">
-    <div class="header-search">
-      <i class="fas fa-search"></i>
-      <input type="text" class="search-form" placeholder="キーワード">
-    </div>
+      <div class="header-search-area">
+        <i class="fas fa-map-marker-alt"></i>
+        <%= f.text_field :address, class:"search-form", placeholder:"エリア" %>
+      </div>
+      <div class="header-search-keyword">
+        <i class="fas fa-search"></i>
+        <%= f.text_field :keyword, class:"search-form", placeholder:"キーワード" %>
+      </div>
+      
+      <%= f.submit class:"hidden_submit"%>
+    <% end %>
+  
   </div>
 
   <div class="header-right">
@@ -38,8 +42,8 @@
       </li>
 
     <% else %>
-      <li><%= link_to "ログイン", new_user_session_path, class:"link"%></li>
-      <li><%= link_to "登録", new_user_registration_path, class:"link" %></li>
+      <li><%= link_to "ログイン", new_user_session_path, class:"link login-link"%></li>
+      <li><%= link_to "登録", new_user_registration_path, class:"link registration-link" %></li>
     <% end %>
   </div>
 </header>

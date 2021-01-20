@@ -45,9 +45,13 @@ class RoomsController < ApplicationController
     end
   end
 
-
+  #rooms_search GET /rooms/search
   def search
-    
+    if params[:search][:address].present?
+      @rooms = Room.search_area(params[:search][:address])
+    elsif 
+      @rooms = Room.search_keyword(params[:search][:keyword])
+    end
   end
 
   private
@@ -60,4 +64,7 @@ class RoomsController < ApplicationController
     params.require(:reservation).permit(:reserving_user_id, :reserved_room_id, :start_date, :end_date, :number_of_people)
   end
 
+  def room_search_params
+    params.fetch(:search, {}).permit(:room_name, :address)
+  end
 end

@@ -20,6 +20,18 @@ class Room < ApplicationRecord
     image.variant(resize_to_limit: [width, height])
   end
 
+  #検索フォームに入力がある場合、addressカラムに「入力された文字列」が含まれるルームを返す
+  def self.search_area(search)
+    return Room.all unless search
+    Room.where(['address LIKE ?', "%#{search}%"])
+  end
+  #検索フォームに入力がある場合、room_nameカラムまたはroom_introductionカラムに「入力された文字列」が含まれるルームを返す
+  def self.search_keyword(search)
+    return Room.all unless search
+    Room.where(['room_name LIKE ? OR room_introduction LIKE ?', "%#{search}%", "%#{search}%"])
+  end
+
+
   private
     #ルームの紹介文がnilなら空文字列を代入する(before_save)
     def set_room_introduction

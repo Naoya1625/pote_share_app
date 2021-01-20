@@ -1,0 +1,6 @@
+<% @rooms.each do |room| %>
+  <div><%= link_to room.room_name, booking_path(room) %></div>
+  <div><%= room.address %></div>
+  <div><%= room.room_introduction %></div>
+  <p>----------------------</p>
+<% end %>
