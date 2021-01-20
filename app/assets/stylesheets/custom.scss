@@ -511,7 +511,6 @@ th {
 }
 .setting-right-content {
   margin-bottom: auto;
-  margin-bottom: 30%;
   padding: 10px;
   border: 1px solid rgb(221, 221, 221); /* 仮 */
   border-radius: 5px;
@@ -564,7 +563,9 @@ th {
     font-size: 50px;
   }
 } 
-
+.setting-right-new { margin-bottom: 30%;}
+.setting-right-account { margin-bottom: 60%;}
+.setting-right-profile { margin-bottom: 40%;}
 /* setting-Left ----------------------------------------*/
 .setting-left {
   border-right: 1px solid rgb(221, 221, 221);

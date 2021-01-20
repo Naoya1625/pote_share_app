@@ -46,6 +46,10 @@ class RoomsController < ApplicationController
   end
 
 
+  def search
+    
+  end
+
   private
   def room_params
     params.require(:room).permit(:room_name, :price_per_person_per_night,
