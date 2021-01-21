@@ -156,7 +156,7 @@ footer {
 .dropdown {
   display: inline-block;
   i {
-      margin-top: 3px;
+      font-size: 56px;
   }
 }
 .link {
@@ -898,8 +898,69 @@ th {
    
 
 }
-/**/
+/* rooms/search--------------------------------------- */
+.search-wrap {
+  width: 100%;
+  padding: 20px;
+}
+.search-content {
+  width: 100%; 
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 
+  h4 {
+    padding-left: 10px;
+    width: 100%;
+
+  }
+  a {
+    box-sizing: border-box;
+    width: 25%;
+    max-width: 25%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+.searching-words {
+  color: rgb(247, 171, 184)
+}
+.search-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  max-height: 200px;
+}
+.search-item {
+  padding: 0px 10px;
+  min-width: 250px;
+  flex-shrink: 0;
+}
+.search-item-detail {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 10px;
+  color: black;
+  h5, p {
+    width: 100%;
+  }
+  h5 {
+    color: gray;
+  }
+}
+.search-address {
+  font-weight: bold;
+}
+.search-inner {
+  border: 1px solid rgb(211, 211, 211);
+  background-color: rgb(245, 245, 245);
+  padding: 10px 0px;
+  min-height: 300px;
+}
+.search-price {
+  text-align: right;
+}
 /* ちょい足しcss ----------------------------------------*/
 .border-bottom-gray {
   border-bottom: 1px solid rgb(221, 221, 221);
@@ -907,3 +968,4 @@ th {
 .font-bold span:first-of-type {
   font-weight: bold;
 }
+

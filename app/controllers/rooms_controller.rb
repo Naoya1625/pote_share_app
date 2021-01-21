@@ -49,8 +49,10 @@ class RoomsController < ApplicationController
   def search
     if params[:search][:address].present?
       @rooms = Room.search_area(params[:search][:address])
-    elsif 
+      @searching_address = params[:search][:address]
+    else
       @rooms = Room.search_keyword(params[:search][:keyword])
+      @searching_keywords = params[:search][:keyword]
     end
   end
 

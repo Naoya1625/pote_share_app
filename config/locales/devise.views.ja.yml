@@ -62,6 +62,11 @@ ja:
       room_introduction: ルーム紹介
       price: 料金
       created_at: 作成日
+    search:
+      case: 件
+      search_result: 検索結果
+      searching_address: 検索中の住所
+      searching_keywords: 検索中のキーワード
   reservations:
     confirm:
       confirmation_of_reservation_details: 予約内容確認
@@ -87,7 +92,6 @@ ja:
       end_date: 終了日
       reservation_time: 予約確定日時
     create:
-
       reservation_was_successfully_created: 予約を確定しました
   devise:
     confirmations:
