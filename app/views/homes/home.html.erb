@@ -1,0 +1,37 @@
+<%= render 'layouts/flash_messages' %>
+
+<div class="home-wrap">
+  <div class="home-top">
+
+    <div class="home-top-left">
+      <div class="home-searchbox">
+        <p><%= t('.take_a_trip_you_have_never_experienced_with_potepan_share') %></p>
+
+        <%= form_with(scope: :search, url: rooms_search_path, method: :get, local: true, class:"home-form") do |f| %>
+            <%= f.label t('.address') %>
+            <%= f.text_field :address, class:"home-search-form", placeholder: t('.tokyo') %>
+
+          <%= f.submit t('.search'), class:"btn home-submit-btn" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="home-top-right">
+    
+    </div>
+
+
+
+
+  </div>
+
+  
+
+
+
+  <!-- ここから下は下半分 ---------------------------->
+  <div class="home-under">
+  
+  </div>
+
+</div>

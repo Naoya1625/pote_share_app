@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'homes#index'
+  root 'homes#home'
 
   #Room
   resources :rooms, except: [:edit, :show]

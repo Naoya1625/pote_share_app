@@ -17,6 +17,7 @@
   .header-left {
     width: 300px
   }
+  
   /* btn */
   .submit-btn-profile,.submit-btn-account {
     width: 100%;
@@ -97,6 +98,16 @@
     display: none;
   }
 
+  /* home.html.erb */
+  .home-top-left {
+
+    width: 75%;
+  }
+  .home-top-right {
+    display:none;
+  
+  }
+
   /* search.html.erb */
   .search-content a{
     width: 50%;
@@ -120,5 +131,12 @@
   /* Header */
   .header-left {
     display: none;
+  }
+
+  /* home.html.erb */
+  .home-top-left {
+
+    width: 90%;
+    min-width: 0px;
   }
 }

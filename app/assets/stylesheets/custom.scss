@@ -961,6 +961,72 @@ th {
 .search-price {
   text-align: right;
 }
+/* home-page ------------------------------------------*/
+
+.home-top {
+  height: 500px;
+  background-color: rgb(184, 184, 184);
+  display: flex;
+  justify-content: center;
+
+}
+.home-top-left {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  max-width: 440px;
+  min-width: 340px; /* 中身設定後に設定する！中身が崩れないような感じで */
+}
+.home-top-right {
+  width: 45%;
+  max-width: 440px;
+}
+.home-searchbox {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;;
+  p {
+    width: 100%;
+    font-size: 22px;
+    padding: 0px;
+  }
+}
+.home-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  label {
+    width: 100%;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  input {
+    width: 100%;
+
+    border-radius: 5px;
+    padding: 6px 10px;
+    border: 1px solid rgb(221, 221, 221);
+    margin-bottom: 12px;
+  }
+  input[type="submit"] {
+    padding: 6px;
+    text-align: center;
+    color: white;
+    background-color: rgb(83, 178, 255);
+    border: 1px solid rgb(0, 132, 255);
+    &:hover {
+      background-color :rgb(46, 160, 253);
+    }
+  }
+}
+
+
+
+
+
 /* ちょい足しcss ----------------------------------------*/
 .border-bottom-gray {
   border-bottom: 1px solid rgb(221, 221, 221);

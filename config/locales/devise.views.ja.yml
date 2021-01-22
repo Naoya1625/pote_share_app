@@ -29,6 +29,12 @@ ja:
     models:
       user: ユーザ
       room: ルーム
+  homes:
+    home:
+      tokyo: 東京
+      take_a_trip_you_have_never_experienced_with_potepan_share: Potepan Shareでまだ体験したことのない旅をしよう
+      search: 探す
+      address: エリア
   rooms:
     new:
       information: 基本情報
