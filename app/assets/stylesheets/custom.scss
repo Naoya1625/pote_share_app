@@ -968,7 +968,8 @@ th {
   background-color: rgb(184, 184, 184);
   display: flex;
   justify-content: center;
-
+  background-image: url(image-home-top.jpg);    /* 背景画像指定 */
+  background-size:  cover;   
 }
 .home-top-left {
   display: flex;
@@ -1022,11 +1023,85 @@ th {
     }
   }
 }
+.home-under-wrap {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+}
+.home-under {
+  display: flex;
+  flex-wrap: wrap;
+  width: 820px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  p {
+    width:100%;
+    margin-left: 10px;
+    margin-bottom:30px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+.home-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.home-item {
+  display: flex;
+  box-sizing: border-box;
+  height: 320px;
+  border-radius: 5px;
+  flex-basis: 180px;
 
-
-
-
-
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  span {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+}
+.item-image {
+  background-size:  cover;   
+  background-position: center center;
+}
+#tokyo {
+  background-image: url(img_tokyo.jpg);    /* 背景画像指定 */
+}
+#osaka {
+  background-image: url(img_osaka.jpg);    /* 背景画像指定 */
+}
+#kyoto {
+  background-image: url(img_kyoto.jpg);    /* 背景画像指定 */
+}
+#sapporo {
+  background-image: url(img_sapporo.jpg);    /* 背景画像指定 */
+}
+/*
+<div class="home-item">
+<img src="img_tokyo.jpg">
+</div>
+<div class="home-item">
+<img src="img_osaka.jpg">
+</div>
+<div class="home-item">
+<img src="img_kyoto.jpg">
+</div>
+<div class="home-item">
+<img src="img_sapporo.jpg">
+</div>
+*/
 /* ちょい足しcss ----------------------------------------*/
 .border-bottom-gray {
   border-bottom: 1px solid rgb(221, 221, 221);

@@ -89,7 +89,22 @@
     min-width: 150px;
   }
 }/* -----------------------------------------------------------------------------------------*/
+@media screen and (max-width: 800px) {
+  /* 800px以下に適用されるCSS */
+  .home-under {
+    justify-content: center;
+    p {
+      text-align: center;
+    }
+  }
+  .home-items {
+    max-width: 400px;
+  }
+  .home-item {
+    flex-basis: 160px;
+  }
 
+}/* -----------------------------------------------------------------------------------------*/
 @media screen and (max-width: 760px) {
   /* 760px以下に適用されるCSS */
 
@@ -105,11 +120,16 @@
   }
   .home-top-right {
     display:none;
-  
+  }
+  .home-item {
+    margin-top: 20px;
+  }
+  .home-items {
+    justify-content: space-around;
   }
 
   /* search.html.erb */
-  .search-content a{
+  .search-content a {
     width: 50%;
     max-width: 50%;
   }
@@ -139,4 +159,10 @@
     width: 90%;
     min-width: 0px;
   }
+  .home-item {
+    max-width: 180px;
+    height: 160px;
+  }
+
+  
 }

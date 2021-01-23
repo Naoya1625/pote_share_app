@@ -32,9 +32,13 @@ ja:
   homes:
     home:
       tokyo: 東京
+      osaka: 大阪
+      kyoto: 京都
+      sapporo: 札幌
       take_a_trip_you_have_never_experienced_with_potepan_share: Potepan Shareでまだ体験したことのない旅をしよう
       search: 探す
       address: エリア
+      recommended_area: おすすめのエリア
   rooms:
     new:
       information: 基本情報
