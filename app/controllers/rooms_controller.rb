@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   #before_action :authenticate_user!, only: [:my_room, :new, :create, :booking, :reserve]
-  before_action :authenticate_user!
+
+  #ログイン済みユーザで無ければアクセスできないアクション
+  before_action :authenticate_user!, only: [:posts, :new, :create, :reserve]
   #authenticated_user!メソッドは非認証ユーザがアクセスするとログイン画面にリダイレクトさせる。
   #後で追加する？before_action :room_owner?, only: [:]
 
@@ -25,6 +27,7 @@ class RoomsController < ApplicationController
       flash[:success] = t('.room_was_successfully_created')
       redirect_to booking_url(@room)
     else
+
       flash[:danger] = t('.room_save_failed')
       render :new
     end

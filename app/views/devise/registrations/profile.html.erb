@@ -31,17 +31,17 @@
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.icon-image') %> <div class="required">必須</div></span>
+            <span><%= t('.icon-image') %> <div class="required-profile">必須</div></span>
             <span><%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %></span>
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.name') %> <div class="required">必須</div></span>
+            <span><%= t('.name') %> <div class="required-profile">必須</div></span>
             <span><%= f.text_field :name, class:"#", id:"aaa" , value: current_user.name %></span>
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.introduction') %> <div class="required">必須</div></span>
+            <span><%= t('.introduction') %> <div class="required-profile">必須</div></span>
             <span><%= f.text_area :introduction, class:"#", id:"aaa" , value: current_user.introduction, placeholder:"自己紹介を入力" %></span>
           </li>
 

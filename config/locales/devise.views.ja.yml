@@ -26,6 +26,12 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      room:
+        room_name: ルーム名
+        room_introduction: ルーム紹介
+        price_per_person_per_night: 1日あたりの料金
+        image: ルーム画像
+        address: 住所
     models:
       user: ユーザ
       room: ルーム
@@ -62,6 +68,7 @@ ja:
       end_date: 終了日
       number_of_people: 人数
       reserve: 予約する
+      signin: ログイン
     create:
       room_was_successfully_created: ルーム登録を完了しました
       room_save_failed: ルーム登録に失敗しました
@@ -236,6 +243,4 @@ ja:
       expired: の有効期限が切れました。新しくリクエストしてください。
       not_found: は見つかりませんでした。
       not_locked: は凍結されていません。
-      not_saved:
-        one: エラーが発生したため %{resource} は保存されませんでした。
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+      not_saved: 失敗しました。

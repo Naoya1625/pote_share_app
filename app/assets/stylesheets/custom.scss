@@ -204,10 +204,23 @@ footer {
 .required {
   color: white;
   background-color: rgb(255, 102, 0);  
-  display: inline-block;
+  display: block;
+  height: 24px;
+  margin-top: 18px;
   padding: 2px 3px;
   border-radius: 5px;
   margin-right: 10px;
+}
+.required-new, .required-profile {
+  display: flex;
+  color: white;
+  align-items: center;
+  height: 20px;
+  font-size: 10px;
+  padding: 1px 3px;
+  border-radius: 5px;
+  margin-left: 6px;
+  background-color: rgb(255, 102, 0);  
 }
 .password-form-wrap {
   border-radius: 5px;
@@ -238,6 +251,11 @@ footer {
 .password-edit-label {
   font-size:14px;
 }
+.field {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+}
 .form-field {
   font-size: 16px;
   /* レスポンシブ対応で〇〇以下でwidth:100%みたいにする */
@@ -264,7 +282,7 @@ footer {
   padding: 8px 0px;
   margin: 20px 0px;
 }
-.submit-btn-profile {
+.submit-btn-profile ,.submit-btn-booking {
   display: block;
   width: 90%;
   color: white;
@@ -272,6 +290,21 @@ footer {
   border-radius: 5px;
   border: none;
   height:40px;
+}
+.booking-signin-btn {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color:rgb(83, 178, 255);
+  height: 40px;
+  border-radius: 5px;
+  &:hover {
+    color: white;
+    background-color: rgb(46, 161, 255)
+  }
+
 }
 .submit-btn-account {
   color: white;
@@ -345,8 +378,32 @@ footer {
   width: 100%;
   top: 0px;
   background-color: rgb(205, 108, 63);
+  max-height: 30px;
+  .alert {
+    font-size: 10px;
+  }
 }
-
+#error_explanation {
+  color: rgb(250, 153, 153);
+  h2 { 
+    font-size: 20px;
+    text-align: center;
+  }
+  ul {
+    padding-left: 0px;
+  }
+}
+.room-new-error-explanations>#error_explanation>ul>li {
+  display: block;
+  
+  text-align: center;
+  height: 20px;
+  padding: 0px 0px;
+}
+.room-new-error-explanations {
+  diaplay: flex;
+  justify-content: center;
+}
 /* 設定ページ */
 /*
 .setting-wrap {
@@ -548,7 +605,7 @@ th {
   padding-left: 0px;
   font-size: 18px;
 }
-.setting-right-content {
+.setting-right-content, .setting-right-new {
   margin-bottom: auto;
   padding: 10px;
   border: 1px solid rgb(221, 221, 221); /* 仮 */
@@ -587,6 +644,7 @@ th {
   }
   ul span:first-of-type {    /*見出し*/
     flex-basis: 150px;
+    display: flex;
   }
   ul span:nth-of-type(2) {
     flex-basis: 200px;

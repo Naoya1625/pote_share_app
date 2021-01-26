@@ -9,37 +9,39 @@
   </div>
 
   <div class="setting-right">
-    <div class="setting-right-content setting-right-new">
+    <div class="setting-right-new">
       <%= form_with model: @room, url: rooms_path, local: true do |f| %>
-
+          
         <ul>
           <li class="border-bottom-gray" id="setting-title">
             <span><%= t('.registration_room') %></span>
             <span></span>
           </li>
+          
+          <li class="room-new-error-explanations"><%= render "devise/shared/error_messages", resource: @room %></li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.room_name') %> <div class="required">必須</div></span>
+            <span><%= t('.room_name') %> <div class="required-new">必須</div></span>
             <span><%= f.text_field :room_name, placeholder:"ルーム名を入力" %></span>
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.room_introduction') %> <div class="required">必須</div></span>
+            <span><%= t('.room_introduction') %> <div class="required-new">必須</div></span>
             <span><%= f.text_area :room_introduction,  placeholder:"ルーム説明を入力" %></span>
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.price') %> <div class="required">必須</div></span>
+            <span><%= t('.price') %> <div class="required-new">必須</div></span>
             <span><%= f.text_field :price_per_person_per_night, class:"#", id:"aaa" , placeholder:"1日あたりの料金を入力" %></span>
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.address') %> <div class="required">必須</div></span>
+            <span><%= t('.address') %> <div class="required-new">必須</div></span>
             <span><%= f.text_field :address, class:"#", id:"aaa" , placeholder:"住所を入力" %></span>
           </li>
 
           <li class="border-bottom-gray font-bold">
-            <span><%= t('.room_image') %> <div class="required">必須</div></span>
+            <span><%= t('.room_image') %> <div class="required-new">必須</div></span>
             <span><%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %></span>
           </li>
 

@@ -7,6 +7,11 @@ FactoryBot.define do
     room_introduction "Room's introduction!"
     sequence(:address) { |n| "Tokyo-#{n}" }
     association :owner
+
+    #afterメソッド。Roomインスタンスをbuildした後、画像をつける。
+    after(:build) do |room|
+      room.image.attach(io: File.open('spec/fixtures/test_image.jpeg'), filename: 'test_image.png', content_type: 'image/jpeg')
+    end
   end
 
 end
