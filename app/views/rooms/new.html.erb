@@ -12,13 +12,13 @@
     <div class="setting-right-new">
       <%= form_with model: @room, url: rooms_path, local: true do |f| %>
           
-        <ul>
+        <ul class="room-new-ul">
           <li class="border-bottom-gray" id="setting-title">
             <span><%= t('.registration_room') %></span>
             <span></span>
           </li>
-          
-          <li class="room-new-error-explanations"><%= render "devise/shared/error_messages", resource: @room %></li>
+
+          <%= render "devise/shared/error_messages", resource: @room %>
 
           <li class="border-bottom-gray font-bold">
             <span><%= t('.room_name') %> <div class="required-new">必須</div></span>

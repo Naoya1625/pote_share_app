@@ -10,7 +10,7 @@ FactoryBot.define do
 
     #afterメソッド。Roomインスタンスをbuildした後、画像をつける。
     after(:build) do |room|
-      room.image.attach(io: File.open('spec/fixtures/test_image.jpeg'), filename: 'test_image.png', content_type: 'image/jpeg')
+      room.image.attach(io: File.open('spec/fixtures/test_image.jpeg'), filename: 'test_image.jpeg', content_type: 'image/jpeg')
     end
   end
 

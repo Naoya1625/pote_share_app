@@ -2,15 +2,20 @@ require 'rails_helper'
 
 #ルームの登録を行うコントローラ
 RSpec.describe RoomsController, type: :controller do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+
+
   describe "#booking" do
     before do
       @room = FactoryBot.create(:room)
     end
+
     # 認証済みのユーザーとして
     context "as a authenticated_user" do
-      before do
-        @user = FactoryBot.create(:user)
-      end
+
       # 正常にレスポンスを返すこと 
       it "responds successfully" do
         sign_in @user
@@ -27,15 +32,15 @@ RSpec.describe RoomsController, type: :controller do
 
     # ゲストとして
     context "as a guest" do
-      # 302レスポンスを返すこと
-      it "returns a 302 response" do
+      # 正常にレスポンスを返すこと 
+      it "responds successfully" do
         get :booking, params: {id: @room.id}
-        expect(response).to have_http_status "302"
+        expect(response).to be_successful
       end
-      # サインイン画面にリダイレクトすること 
-      it "redirects to the sign-in page" do
+      # 200レスポンスを返すこと
+      it "returns a 200 response" do
         get :booking, params: {id: @room.id}
-        expect(response).to redirect_to "/users/sign_in"
+        expect(response).to have_http_status "200"
       end
     end
   end
@@ -43,9 +48,6 @@ RSpec.describe RoomsController, type: :controller do
   describe "#posts" do
     # 認証済みのユーザーとして
     context "as a authenticated_user" do
-      before do
-        @user = FactoryBot.create(:user)
-      end
       # 正常にレスポンスを返すこと 
       it "responds successfully" do
         sign_in @user
@@ -76,18 +78,21 @@ RSpec.describe RoomsController, type: :controller do
   end
 
   describe "#create" do
+    before do
+      @user = FactoryBot.create(:user)
+    end
+
     # 認証済みのユーザーとして
     context "as an authenticated user" do
-      before do
-        @user = FactoryBot.create(:user)
-      end
       # ルームを登録できること 
       it "adds a room" do
         room_params = FactoryBot.attributes_for(:room)
+
         sign_in @user
+        binding.pry
         expect {
           post :create, params: { room: room_params }
-        }.to change(@user.rooms, :count).by(1)
+        }.to change(Room, :count).by(+1)
       end
     end
 
@@ -107,4 +112,5 @@ RSpec.describe RoomsController, type: :controller do
       end 
     end
   end
+
 end

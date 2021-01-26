@@ -21,9 +21,8 @@ class RoomsController < ApplicationController
   #rooms  POST   /rooms
   def create
     @room = current_user.rooms.build(room_params)
-    @room.image.attach(params[:room][:image])  #fileが未選択だとエラーになる。
+
     if @room.save
-      #flash-message多言語化すること
       flash[:success] = t('.room_was_successfully_created')
       redirect_to booking_url(@room)
     else
