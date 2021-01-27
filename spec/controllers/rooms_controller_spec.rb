@@ -2,30 +2,26 @@ require 'rails_helper'
 
 #ルームの登録を行うコントローラ
 RSpec.describe RoomsController, type: :controller do
-  before do
-    @user = FactoryBot.create(:user)
-  end
-
+  let(:user) { FactoryBot.create(:user) }
+  let(:room) { FactoryBot.create(:room) }
 
 
   describe "#booking" do
-    before do
-      @room = FactoryBot.create(:room)
-    end
+
 
     # 認証済みのユーザーとして
     context "as a authenticated_user" do
 
       # 正常にレスポンスを返すこと 
       it "responds successfully" do
-        sign_in @user
-        get :booking, params: {id: @room.id}
+        #sign_in user
+        get :booking, params: {id: room.id}
         expect(response).to be_successful
       end
       # 200レスポンスを返すこと
       it "returns a 200 response" do
-        sign_in @user
-        get :booking, params: {id: @room.id}
+        sign_in user
+        get :booking, params: {id: room.id}
         expect(response).to have_http_status "200"
       end
   end
@@ -34,12 +30,12 @@ RSpec.describe RoomsController, type: :controller do
     context "as a guest" do
       # 正常にレスポンスを返すこと 
       it "responds successfully" do
-        get :booking, params: {id: @room.id}
+        get :booking, params: {id: room.id}
         expect(response).to be_successful
       end
       # 200レスポンスを返すこと
       it "returns a 200 response" do
-        get :booking, params: {id: @room.id}
+        get :booking, params: {id: room.id}
         expect(response).to have_http_status "200"
       end
     end
@@ -50,13 +46,13 @@ RSpec.describe RoomsController, type: :controller do
     context "as a authenticated_user" do
       # 正常にレスポンスを返すこと 
       it "responds successfully" do
-        sign_in @user
+        sign_in user
         get :posts
         expect(response).to be_successful
       end
       # 200レスポンスを返すこと
       it "returns a 200 response" do
-        sign_in @user
+        sign_in user
         get :posts
         expect(response).to have_http_status "200"
       end
@@ -76,6 +72,8 @@ RSpec.describe RoomsController, type: :controller do
       end
     end
   end
+
+=begin ここのコメントアウトは、roomのfactoryにてroomにimageをattachできるようになったら外す。
 
   describe "#create" do
     before do
@@ -109,5 +107,7 @@ RSpec.describe RoomsController, type: :controller do
       end 
     end
   end
+=end
+
 
 end
