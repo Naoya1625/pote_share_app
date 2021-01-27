@@ -3,11 +3,11 @@ require 'rails_helper'
 #ルームの登録を行うコントローラ
 RSpec.describe RoomsController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
-  let(:room) { FactoryBot.create(:room) }
+
 
 
   describe "#booking" do
-
+    let(:room) { FactoryBot.create(:room) }
 
     # 認証済みのユーザーとして
     context "as a authenticated_user" do
@@ -42,6 +42,7 @@ RSpec.describe RoomsController, type: :controller do
   end
 
   describe "#posts" do
+
     # 認証済みのユーザーとして
     context "as a authenticated_user" do
       # 正常にレスポンスを返すこと 
@@ -74,17 +75,20 @@ RSpec.describe RoomsController, type: :controller do
   end
 
 =begin ここのコメントアウトは、roomのfactoryにてroomにimageをattachできるようになったら外す。
-
+=end
   describe "#create" do
-    before do
-      @user = FactoryBot.create(:user)
-    end
+
+      let(:user) { FactoryBot.create(:user) }
+
     # 認証済みのユーザーとして
     context "as an authenticated user" do
+      let(:room_params) { { room: attributes_for(:room) } }
       # ルームを登録できること 
       it "adds a room" do
         room_params = FactoryBot.attributes_for(:room) 
-        sign_in @user	
+
+        sign_in user	
+        binding.pry
         expect {
           post :create, params: room_params
         }.to change(Room, :count).by(+1)
@@ -107,7 +111,7 @@ RSpec.describe RoomsController, type: :controller do
       end 
     end
   end
-=end
+
 
 
 end

@@ -29,7 +29,6 @@ RSpec.feature "Users", type: :feature do
     visit root_path
     # ログアウトボタンをクリックする
     click_link 'ログアウト', href: destroy_user_session_path
-    save_and_open_page
     expect(page).to have_content 'ログアウトしました。'
   end
 =begin
