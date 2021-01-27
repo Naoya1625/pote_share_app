@@ -1,3 +1,5 @@
+include ActionDispatch::TestProcess
+
 FactoryBot.define do
  
   #normal
@@ -10,7 +12,10 @@ FactoryBot.define do
 
     #afterメソッド。Roomインスタンスをbuildした後、画像をつける。
     after(:build) do |room|
-      room.image.attach(io: File.open('spec/fixtures/test_image.jpeg'), filename: 'test_image.jpeg', content_type: 'image/jpeg')
+      room.image = fixture_file_upload("spec/fixtures/files/test_image.jpeg")
+      
+      #または下記でもダメでした
+      #room.image.attach(fixture_file_upload("spec/fixtures/files/test_image.jpeg"))
     end
   end
 

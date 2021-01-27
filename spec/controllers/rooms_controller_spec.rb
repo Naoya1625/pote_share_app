@@ -81,17 +81,14 @@ RSpec.describe RoomsController, type: :controller do
     before do
       @user = FactoryBot.create(:user)
     end
-
     # 認証済みのユーザーとして
     context "as an authenticated user" do
       # ルームを登録できること 
       it "adds a room" do
-        room_params = FactoryBot.attributes_for(:room)
-
-        sign_in @user
-        binding.pry
+        room_params = FactoryBot.attributes_for(:room) 
+        sign_in @user	
         expect {
-          post :create, params: { room: room_params }
+          post :create, params: room_params
         }.to change(Room, :count).by(+1)
       end
     end
