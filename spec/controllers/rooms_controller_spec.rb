@@ -74,24 +74,28 @@ RSpec.describe RoomsController, type: :controller do
     end
   end
 
-=begin ここのコメントアウトは、roomのfactoryにてroomにimageをattachできるようになったら外す。
-=end
+# ------------------Qastに投稿した、現在問題のあるコードです。-------------------
   describe "#create" do
-
-      let(:user) { FactoryBot.create(:user) }
 
     # 認証済みのユーザーとして
     context "as an authenticated user" do
-      let(:room_params) { { room: attributes_for(:room) } }
+      #let(:room_params) { { room: attributes_for(:room) } }
       # ルームを登録できること 
       it "adds a room" do
-        room_params = FactoryBot.attributes_for(:room) 
+        room = FactoryBot.build(:room) 
+        room_params = room.attributes
+        #room_params = build_attributes(:room)
+        
+        binding.pry
 
         sign_in user	
-        binding.pry
+
         expect {
           post :create, params: room_params
         }.to change(Room, :count).by(+1)
+        #expect {
+        #  post :create, params: room_params
+        #}.to change(Room, :count).by(+1)
       end
     end
 
