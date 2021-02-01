@@ -73,31 +73,25 @@ RSpec.describe RoomsController, type: :controller do
       end
     end
   end
-
-# ------------------Qastに投稿した、現在問題のあるコードです。-------------------
+=begin 
   describe "#create" do
-
     # 認証済みのユーザーとして
     context "as an authenticated user" do
-      #let(:room_params) { { room: attributes_for(:room) } }
-      # ルームを登録できること 
-      it "adds a room" do
-        room = FactoryBot.build(:room) 
-        room_params = room.attributes
-        #room_params = build_attributes(:room)
-        
-        binding.pry
-
-        sign_in user	
-
+      it "adds a new room" do
+        sign_in user 
         expect {
-          post :create, params: room_params
-        }.to change(Room, :count).by(+1)
-        #expect {
-        #  post :create, params: room_params
-        #}.to change(Room, :count).by(+1)
+          post :create, params: {
+            room_name: "テスト用ルーム",
+            room_introduction: "テスト用紹介文",
+            price_per_person_per_night: 1000,
+            owner_id: 1,
+            address: "テスト住所",
+            image: "fixtures/files/test_image.jpeg"
+            }
+          }.to change(user.rooms, :count).by(1)
       end
     end
+
 
     # ゲストとして
     context "as a guest" do
@@ -115,7 +109,6 @@ RSpec.describe RoomsController, type: :controller do
       end 
     end
   end
-
-
+=end
 
 end

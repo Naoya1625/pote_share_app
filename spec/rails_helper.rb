@@ -30,13 +30,17 @@ ActiveRecord::Migration.maintain_test_schema!
 
 require 'devise'
 require 'support/controller_macros'
-
+require 'support/request_spec_helper'
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::TestHelpers, :type => :controller
 
   config.include ControllerMacros, :type => :controller
 
+# Devise のヘルパーメソッドをテスト内で使用する
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include RequestSpecHelper, type: :request
+  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
