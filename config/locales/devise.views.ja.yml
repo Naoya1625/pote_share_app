@@ -110,6 +110,12 @@ ja:
       reservation_time: 予約確定日時
     create:
       reservation_was_successfully_created: 予約を確定しました
+    show:
+      reserved_room: 予約した部屋
+      start_date: 開始日
+      end_date: 終了日
+      amount: 価格
+      unit: 円
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

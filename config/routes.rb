@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   #Reservation
   resources :reservations, only: [:index, :show]
-  post  "reservations/confirm", to: "reservations#confirm", as: "confirm"
-  get "reservations/confirm", to: "homes#index"
+  post  "reservation/confirm", to: "reservations#confirm", as: "confirm"
+  #get "reservation/confirm", to: "homes#index"
   post "reserve", to: "reservations#create"
 
   #get "reservations/new", to: "reservations#new"

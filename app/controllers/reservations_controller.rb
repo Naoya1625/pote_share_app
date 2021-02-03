@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+  before_action :authenticate_user!
   #予約済みルーム一覧
   #reservations GET    /reservation      #reservations GET    /reservations(.:format)   reservations#index
   def index
@@ -30,16 +30,20 @@ class ReservationsController < ApplicationController
     @room = Room.find(@reservation.reserved_room_id)
     if params[:back]
       render "rooms/booking"
+
     elsif @reservation.valid?
-      flash[:notice] = t('.reservation_was_successfully_created')
+
+      flash[:success] = "予約を確定しました"
       redirect_to reservation_url(@reservation)
     else
+
       render "rooms/booking"
     end
   end
 
   #reservation   get   /reservation/:id
   def show
+    
     @reservation = Reservation.find(params[:id])
   end
 
@@ -51,9 +55,8 @@ class ReservationsController < ApplicationController
                   :reserved_room_id)
   end
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date,
-                  :number_of_people, :reserving_user_id,
-                  :reserved_room_id, :amount)
+    params.require(:reservation).permit(:reserving_user_id, :reserved_room_id,:start_date, 
+                  :end_date, :number_of_people,:amount)
   end
 
 
