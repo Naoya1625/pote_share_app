@@ -20,8 +20,9 @@ class RoomsController < ApplicationController
 
   #rooms  POST   /rooms
   def create
+    binding.pry
     @room = current_user.rooms.build(room_params)
-
+    binding.pry
     if @room.save
       flash[:success] = t('.room_was_successfully_created')
       redirect_to booking_url(@room)
@@ -37,7 +38,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @user = User.find(@room.owner_id)
   end
-
+=begin
   #reserve POST   /reserve
   def reserve
     @room = Reservation.build(reservation_params)
@@ -46,6 +47,7 @@ class RoomsController < ApplicationController
       redirect_to root_url
     end
   end
+=end
 
   #rooms_search GET /rooms/search
   def search

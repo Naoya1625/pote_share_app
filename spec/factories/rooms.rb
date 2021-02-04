@@ -10,9 +10,12 @@ FactoryBot.define do
     association :owner
 
     #afterメソッド。Roomインスタンスをbuildした後、画像をつける。
+    #after(:build) do |room|
+    #  room.image = fixture_file_upload("spec/fixtures/files/test_image.jpeg")
+    #end 
     after(:build) do |room|
-      room.image = fixture_file_upload("spec/fixtures/files/test_image.jpeg")
-    end 
+      room.image = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test_image.jpeg'), 'image/jpeg')
+    end
   end
 
 end

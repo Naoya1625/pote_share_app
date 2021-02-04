@@ -11,5 +11,5 @@ module ReservationsSpecHelper
       :amount
     ])
   end
-
+  
 end

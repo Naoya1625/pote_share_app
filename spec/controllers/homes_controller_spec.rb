@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe HomesController, type: :controller do
-  describe "#index" do
+  describe "#home" do
 
     # 正常にレスポンスを返すこと 
     it "responds successfully" do
@@ -14,4 +14,5 @@ RSpec.describe HomesController, type: :controller do
       expect(response).to have_http_status "200"
     end 
   end
+
 end 
