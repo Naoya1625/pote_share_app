@@ -46,7 +46,6 @@ RSpec.describe "ReservationsApis", type: :request do
 
     # :confirm
     describe "POST /reservation/confirm" do
-
       let(:reservation_confirm_params) do {
           reserving_user_id: user.id,
           reserved_room_id: room.id,

@@ -3,8 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
-  #before_save :set_user_image
   before_save :set_introduction
   before_save :downcase_email
   attr_accessor :current_password
@@ -23,7 +21,7 @@ class User < ApplicationRecord
                           dependent:   :destroy
   has_many :reserving_user, through: :reservations, source: :reserved_room
 
-  #ActiveAtorage
+  #ActiveStorage
   has_one_attached :image
 
   # ルームの予約をする
@@ -43,7 +41,8 @@ class User < ApplicationRecord
 
   # ユーザ情報更新にはパスワードを必要としない
   def update_without_current_password(params, *options)
-    params.delete(:current_password)
+
+      params.delete(:current_password)
 
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
@@ -54,7 +53,6 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
   private
 
     #ユーザの紹介文がnilなら空文字列を代入する(before_save)

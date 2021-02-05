@@ -95,7 +95,7 @@ ja:
       person: 人
       days_of_use: 使用日数
       if_you_are_satisfied_with_the_above_contents_please_press_confirm_reservation: 上記内容でよろしければ「予約を確定」を押してください
-      with_start_date_the_end_date_is_reversed: 開始日が終了日より後の日付になっていますううううううううう
+      with_start_date_the_end_date_is_reversed: 開始日が終了日より後の日付になっています
       confirm_reservation: 予約を確定
       back: ルーム詳細に戻る
       the_reservation_was_not_created_successfully: ルームの予約に失敗しました
@@ -220,6 +220,7 @@ ja:
         email: メールアドレス
         password: パスワード
         edit: 編集
+        please_login: 新規登録またはログインする必要があります
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:

@@ -48,7 +48,7 @@ RSpec.describe "Rooms Api", type: :request do
       binding.pry
       get new_room_path
       expect {
-        post rooms_path, params: room_params
+        post rooms_path, params: { room: room_params }
       }.to change(Room, :count).by(1)
     end
   end

@@ -5,5 +5,9 @@ FactoryBot.define do
     password "password"
     password_confirmation "password"
 
+    trait :changed_password do
+      password "changedpassword"
+      password_confirmation "changedpassword"
+    end
   end
 end
