@@ -1,29 +1,24 @@
 require 'rails_helper'
 
 RSpec.feature "Rooms", type: :feature do
-=begin
-  scenario "user creates a new project" do
-     user = FactoryBot.create(:user)
-    
-     visit new_user_registration_path
-     click_link "登録"
-     fill_in "名前", with: user.name
-     fill_in "メールアドレス", with: user.email
-     fill_in "パスワード", with: user.password
-     fill_in "パスワード確認", with: user.password
-     click_button "新しいアカウントを作成"
-     
-     visit new_room_path
-     expect{
-      fill_in "room_name", with: "Room"
-      fill_in "ルーム紹介", with: "RoomInt"
-      fill_in "料金", with: 1000
-      fill_in "住所" , with: "Tokyo"
-      fill_in "ルーム画像", with: "pote_share_ptpn.png"
-      click_button "登録"
+  let(:user) { create(:user) }
+  let(:room) { create(:room) }
+
+  describe "ルーム新規登録" do
+    let(:room_params) { build(:room) }
+    before do
+      login user
       
-      expect(page).to have_content "Room was successfully created."}.to change(user.rooms, :count).by(1)
+    end
+    scenario "ルーム登録に成功すること" do
+      visit new_room_path
+      fill_in "ルーム名", with: room_params.room_name
+      fill_in "ルーム紹介", with: room_params.room_introduction
+      fill_in "料金", with: room_params.price_per_person_per_night
+      fill_in "住所", with: room_params.address
+      click_on "登録"
+      expect(page).to have_content "住所を入力してください"
+    end
 
   end
-=end
 end

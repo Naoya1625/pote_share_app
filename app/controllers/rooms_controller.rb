@@ -20,14 +20,11 @@ class RoomsController < ApplicationController
 
   #rooms  POST   /rooms
   def create
-    binding.pry
     @room = current_user.rooms.build(room_params)
-    binding.pry
     if @room.save
       flash[:success] = t('.room_was_successfully_created')
       redirect_to booking_url(@room)
     else
-
       flash[:danger] = t('.room_save_failed')
       render :new
     end

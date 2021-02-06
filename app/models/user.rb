@@ -12,7 +12,10 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
-
+  #with_options on: :update do |update|
+  #  update.validates :, presence: true
+  #  update.validates :email, presence: true
+  #end
 
   has_many :rooms, foreign_key: :owner_id, dependent: :destroy
 
@@ -41,18 +44,18 @@ class User < ApplicationRecord
 
   # ユーザ情報更新にはパスワードを必要としない
   def update_without_current_password(params, *options)
-
-      params.delete(:current_password)
-
+    params.delete(:current_password)
+ 
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
       params.delete(:password_confirmation)
     end
-
+ 
     result = update_attributes(params, *options)
     clean_up_passwords
     result
   end
+
   private
 
     #ユーザの紹介文がnilなら空文字列を代入する(before_save)
