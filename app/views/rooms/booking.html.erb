@@ -36,14 +36,13 @@
     </div>
   
 
-    <!-- ここからは予約画面右側 -->
     <div class="booking-right">
         <div class="setting-right-content" id="booking-form">
           <%= form_with model: @reservation, url: confirm_path, method: :post, local: true do |f| %>
 
             <ul>
               <% if user_signed_in? %>
-                <%= f.hidden_field :reserving_user_id, value: current_user.id %> <!-- attendancesテーブルのidを渡す -->
+                <%= f.hidden_field :reserving_user_id, value: current_user.id %> 
                 <%= f.hidden_field :reserved_room_id, value: @room.id %>
               <% end %>
               <li>

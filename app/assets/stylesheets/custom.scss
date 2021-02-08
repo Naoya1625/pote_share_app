@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+  box-sizing: border-box;
   padding-bottom: 130px;/*←footerの高さ*/
   .wrap { 
     height: 100%;
@@ -258,7 +258,6 @@ footer {
 }
 .form-field {
   font-size: 16px;
-  /* レスポンシブ対応で〇〇以下でwidth:100%みたいにする */
   width: 300px;
   height: 40px;
   border-radius: 5px;
@@ -405,185 +404,6 @@ footer {
 }
 
 
-/* 設定ページ */
-/*
-.setting-wrap {
-  height: 120%;
-  width: 100%;
-}
-*/
-/*
-.setting-left {
-  font-size: 20px;
-  width: 15%;
-  height: 100%;
-  border-right: 2px solid lightgray;
-  padding-right: 10px;
-  float: left;
-}
-*/
-/*
-.setting-toggle {
-  color: black;
-  width: 100%;
-  display: inline-block;
-  padding: 10px 0px;
-}
-.select-account {
-  color: rgb(108, 160, 228);
-  border-right: 4px solid rgb(0, 89, 255);
-}
-.setting-right{
-  width: 85%;
-  height: 100%;
-  display: inline-block;
-  background-color: rgb(231, 241, 245);
-  text-align: center;
-}
-*/
-/* 設定ページのアカウント画面 */
-/*
-.account-table {
-  background-color: white;
-  font-size: 16px;
-  width: 60%;
-  margin: 40px auto;
-  padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  table{
-    width: 100%;
-  }
-  th, td {
-    height: 70px;
-  }
-}
-th {
-  padding-left: 20px;
-  width:30%;
-}
-.account-table td{
-  text-align: left;
-}
-.table-title {
-  text-align: left;
-  font-size: 24px;
-  th {
-    display: inline;
-    font-weight: normal;
-    vertical-align: top;
-  }
-}
-
-.tr-border-bottom {
-  border-bottom: 1px solid rgb(228, 224, 224);
-}
-.-bottom {
-  border-bottom: 1px solid rgb(228, 224, 224);
-}
-.btn-table th{
-  padding-top: 10px;
-  text-align: center;
-
-  a, input{
-    color: white;
-    width: 150px;
-    background-color: rgb(0, 110, 255);
-    padding: 10px 30px;
-    border-radius: 5px;
-    font-weight: normal;
-    border: none;
-  }
-}
-*/
-
-/* 設定ページのプロフィール画面 */
-/*
-.profile-table {
-  background-color: white;
-  font-size: 16px;
-  width: 80%;
-  margin: 20px auto;
-  padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-
-  table{
-    width: 100%;
-
-  }
-  th, td {
-    height: 70px;
-    padding: 20px 20px;
-    text-align: left;
-    vertical-align: top;
-  }
-}
-.icon-table th{
-  text-align: center;
-}
-.setting-user-icon {
-  color: gray;
-  font-size:60px;
-  padding:20px;
-}
-*/
-
-/* booking ----------------------------------------*/
-/*
-.booking-wrap {
-  text-align: center;
-  width: 900px;
-  height: 600px;
-  padding: 20px;
-
-}
-.booking-left {
-  float: left;
-  width: 600px;
-  height: 700px;
-  padding: 20px;
-
-  border: 1px solid black;
-}
-.booking-table {
-  border: 1px solid black;
-  height: 300px;
-  text-align: left;
-  table {
-    height: 100%;
-    width:100%;
-  }
-}
-.booking-image {
-  height: 400px;
-}
-.height-20 {
-  height: 20%;
-}
-.boooked-room-owner-image {
-  width: 50px;
-}
-.booking-details-title {
-  font-weight: bold;
-  font-size: 26px;
-}
-.booking-details-content {
-  font-size: 18px;
-}
-.booking-introduction {
-  padding: 0px 20px;
-  height: 60%;
-  font-size:14px;
-}
-.booking-right {
-    height:
-    500px;
-    border: 1px solid black;
-  }
-
-*/
-
 /* Setting-Right ----------------------------------------*/
 .setting-wrap {
   display: flex;   /*並列になる*/
@@ -680,7 +500,6 @@ th {
   padding-top: 50px;
 
   ul {
-    /* border: 1px solid black; */
     display: flex;
     text-align: left;
     align-items: flex-start;
@@ -713,7 +532,7 @@ th {
   box-sizing: border-box;
   flex-wrap: wrap;
   padding: 10px;
-  max-width: 1000px; /* 最大幅指定 */
+  max-width: 1000px;
 }
 .booking-left {
   box-sizing: border-box;
@@ -799,16 +618,7 @@ th {
     padding-left: 10px;
   }
 }
-  /*
-  table {
-    width: 100%;
-    height: 100%;
 
-  }
-  td {
-    border: 1px solid rgb(225, 228, 92);
-  }
-*/
 /* 予約済みルーム一覧 & 登録済みルーム一覧 ----------------------------------------*/
 .res-wrap, .reg-wrap{
   width: 100%;
@@ -945,18 +755,37 @@ th {
 /* show -----------------------------------------------*/
 .show-wrap {
   width: 100%;
+  height: 780px;
+  background-color: rgb(243, 241, 241);
+  padding-top: 40px;
 }
 .show-content {
+  background-color: white;
   width: 70%;
-  margin: 0 auto;
-  border: 1px solid black;
+  max-width: 700px;
+  margin: 0px auto;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
   padding: 10px;
 }
+
 .show-ul {
   padding-left: 0px;
-   
-
+  display: flex;
+  padding: 10px 20px;
+  
 }
+.show-ul li:nth-of-type(1) {
+  flex-basis: 140px;
+  font-weight: bold;
+}
+.show-ul li:nth-of-type(2) {
+  display: flex;
+  flex-basis: 200px;
+}
+
+
+
 /* rooms/search--------------------------------------- */
 .search-wrap {
   width: 100%;
@@ -1020,6 +849,8 @@ th {
 .search-price {
   text-align: right;
 }
+
+
 /* home-page ------------------------------------------*/
 
 .home-top {
@@ -1147,20 +978,8 @@ th {
 #sapporo {
   background-image: url(img_sapporo.jpg);    /* 背景画像指定 */
 }
-/*
-<div class="home-item">
-<img src="img_tokyo.jpg">
-</div>
-<div class="home-item">
-<img src="img_osaka.jpg">
-</div>
-<div class="home-item">
-<img src="img_kyoto.jpg">
-</div>
-<div class="home-item">
-<img src="img_sapporo.jpg">
-</div>
-*/
+
+
 /* ちょい足しcss ----------------------------------------*/
 .border-bottom-gray {
   border-bottom: 1px solid rgb(221, 221, 221);

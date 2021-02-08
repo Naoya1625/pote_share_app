@@ -42,16 +42,19 @@ rooms = Room.all
 number_of_people = 3
 today = Date.today
 20.times do |n|
+  room = Room.find(n+1) 
   start_date = today + (n+2)
   end_date = today + (n+4)
   reserving_user_id = User.find(n+1).id
-  reserved_room_id = Room.find(n+1).id
+  reserved_room_id = room.id
   created_at = today + (n+1)
+  amount = ( end_date - start_date ) * number_of_people * room.price_per_person_per_night
   reservation = Reservation.new(start_date: start_date,
                      end_date: end_date,
                      number_of_people: number_of_people,
                      reserving_user_id: reserving_user_id,
                      reserved_room_id: reserved_room_id,
+                     amount: amount
                     )
   reservation.update_attribute(:created_at, created_at)
   

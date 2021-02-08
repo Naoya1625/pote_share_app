@@ -1,26 +1,34 @@
 <div class="show-wrap">
   <div class="show-content">
-      <ul class="show-ul">
-        <li class="border-bottom-gray font-bold">
-          <span><%= t('.reserved_room') %></span>
-          <span><%= @reservation.reserved_room.room_name %></span>
-        </li>
-
-        <li class="border-bottom-gray font-bold">
-          <span><%= t('.start_date') %></span>
-          <span><%= @reservation.start_date %></span>
-        </li>
-
-        <li class="border-bottom-gray font-bold">
-          <span><%= t('.end_date') %></span>
-          <span><%= @reservation.end_date %></span>
-        </li>
-
-        <li class="border-bottom-gray font-bold">
-          <span><%= t('.amount') %></span>
-          <span><%= "#{@reservation.amount}#{t('.unit')}" %></span>
-        </li>
+    <div class="show-row">
+      <ul class="show-ul border-bottom-gray">
+        <li><%= t('.reserved_room') %></li>
+        <li><%= @reservation.reserved_room.room_name %></li>
       </ul>
+    </div>
+
+    <div class="show-row">
+      <ul class="show-ul border-bottom-gray">
+        <li><%= t('.start_date') %></li>
+        <li><%= @reservation.start_date %></li>
+      </ul>
+    </div>
+
+
+    <div class="show-row">
+      <ul class="show-ul border-bottom-gray">
+        <li><%= t('.end_date') %></li>
+        <li><%= @reservation.end_date %></li>
+      </ul>
+    </div>
+
+
+    <div class="show-row">
+      <ul class="show-ul">
+        <li><%= t('.amount') %></li>
+        <li><%= "#{@reservation.amount}#{t('.unit')}" %></li>
+      </ul>
+    </div>
 
   </div>
 </div>

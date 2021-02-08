@@ -65,7 +65,6 @@ RSpec.describe "ReservationsApis", type: :request do
       end
     end
 
-
     # :create
     describe "POST /reserve" do
       let(:reservation_attrs) do {

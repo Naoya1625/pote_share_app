@@ -45,7 +45,7 @@
           </li>
 
           <li id="setting-submit-btn">
-            <span><%= f.submit t('.registration'), class:"submit-btn-profile" %></span>
+            <span><%= f.submit t('.registration'), class:"submit-btn-profile room_registration" %></span>
             <span></span>
           </li>
         </ul>
@@ -55,76 +55,3 @@
     </div>  
   </div>
 
-
-<%
-=begin%>
-<div class="setting-wrap">
-  <div class="setting-left">
-    <ul>
-      <li><%= link_to t('.information'), users_account_path, class:"setting-toggle select-account" %></li>
-    </ul>
-  </div>
-
-  <div class="setting-right">
-    <div class="profile-table">
-      <%= form_with(model: @room, local: true) do |f| %>
-        <table>
-          <tr class="table-title tr-border-bottom">
-            <th><%= t('.registration_room') %></th>
-            <td></td>
-          </tr>
-
-          
-
-            <tr class="tr-border-bottom margin-top-10">
-              <th><%= t('.room_name') %> <div class="required">必須</div></th>
-              <td><%= f.text_field :room_name, class:"form-field", id:"full-width",placeholder:"ルーム名を入力"%></td>
-            </tr>
-
-            <tr class="tr-border-bottom text-area-field">
-              <th><%= t('.room_introduction') %> <div class="required">必須</div></th>
-              <td>
-                <div class="left-justified">
-                  <%= f.text_area :room_introduction, class:"form-field", id:"full-width", placeholder:"ルーム紹介を入力" %>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="tr-border-bottom">
-              <th><%= t('.price') %> <div class="required">必須</div></th>
-              <td>
-                <div class="left-justified">
-                  <%= f.text_field :price_per_person_per_night, class:"form-field", id:"full-width", placeholder:"1日あたりの料金を入力" %>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="tr-border-bottom text-area-field">
-              <th><%= t('.address') %> <div class="required">必須</div></th>
-              <td>
-                <div class="left-justified">
-                  <%= f.text_field :address, class:"form-field", id:"full-width", placeholder:"自己紹介を入力" %>
-                </div>
-              </td>
-            </tr>
-            
-            <tr class="tr-border-bottom">
-              <th><%= t('.room_image') %> <div class="required">必須</div></th>
-              <td><span class="image"><%= f.file_field :image,accept: "image/jpeg,image/gif,image/png", class:'input-file-field' %></span></td>
-            </tr>
-
-            <tr class="btn-table">
-              <th><%= f.submit t('.registration'), method: :post, class:"table-btn" %></th>
-              <td></td>
-            </tr>  
-          </table>
-        <% end %>
-    </div>  
-  </div>
-
-
-</div>
-
-<%
-=end
-%>

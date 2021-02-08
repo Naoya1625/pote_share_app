@@ -31,28 +31,6 @@ RSpec.describe "Rooms Api", type: :request do
     end
   end
 
-=begin  このテストはモデルスペックにて代用する！
-  describe "POST /rooms" do
-    let(:room_attrs) do { 
-      room_name: "test_room_name",
-      price_per_person_per_night: 10000,
-      owner_id: user.id,
-      room_introduction: "test_room_introduction",
-      address: "test_address"
-    }
-  end
-  let(:room) { FactoryBot.build(:room, room_attrs) }
-  let(:room_params) { { room: room_req_params(room) } }
-    it "ユーザーはルームを登録できること" do
-      sign_in user
-      binding.pry
-      get new_room_path
-      expect {
-        post rooms_path, params: { room: room_params }
-      }.to change(Room, :count).by(1)
-    end
-  end
-=end
   # :create
   describe "POST /rooms" do
     let(:room_attrs) do { 
