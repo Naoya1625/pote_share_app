@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   before_save :set_introduction
@@ -11,12 +9,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
-
-  #with_options on: :update do |update|
-  #  update.validates :, presence: true
-  #  update.validates :email, presence: true
-  #end
-
   has_many :rooms, foreign_key: :owner_id, dependent: :destroy
 
   has_many :reservations, class_name:  "Reservation",
@@ -63,10 +55,6 @@ class User < ApplicationRecord
       self.introduction = "" if ( self.introduction == nil )
     end
 
-    #ユーザ画像がnilならデフォルト画像を代入する(before_save)
-    def set_user_image
-      self.image = "default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" if ( self.image == nil )
-    end
 
     # メールアドレスをすべて小文字にする(before_save)
     def downcase_email

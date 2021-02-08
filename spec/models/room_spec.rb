@@ -70,11 +70,4 @@ RSpec.describe Room, type: :model do
     expect(other_room).to be_valid
   end
 
-
-
-
-
-
-
-
 end
