@@ -1,0 +1,179 @@
+@media screen and (max-width: 980px) {
+  /* 980px以下に適用されるCSS（タブレット用） */
+  .search-content a{
+    width: 33.3%;
+    max-width: 33.3%;
+  }
+}
+
+
+@media screen and (max-width: 960px) {
+  /* 960px以下に適用されるCSS（タブレット用） */
+
+  /* Header */
+  .header-search-area, .header-search-keyword {
+    display: none;
+  }
+  .header-left {
+    width: 300px
+  }
+  
+  /* btn */
+  .submit-btn-profile,.submit-btn-account {
+    width: 100%;
+  }
+
+  /* Setting-page */
+  .setting-left {
+    width: 100%;
+    height: 70px;
+    border-right: none;
+    border-bottom: 1px solid rgb(221, 221, 221);;
+  }
+  .setting-right {
+    width: 100%;
+    height: 100%;
+  }
+  .setting-right-content {
+    width: 100%;
+
+    ul span:first-of-type {    /*見出し*/
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 100%;
+
+    }
+    ul span:nth-of-type(2) {
+      flex-basis: 100%;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+  .setting-left-content {
+    padding-top: 0px;
+
+    ul {
+      padding-left: 20px;
+      display: flex;
+      height: 100%;
+      width:100%;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      flex-direction: row;
+    }
+    li {
+      padding-top:10px;
+      height: 80%;
+      width: 100px;
+      text-align: center;
+    }
+  }
+  #setting-toggle {     /* 選択中のリンク */
+    border-right: none;
+    border-bottom: 3px solid rgb(0, 179, 211);
+    color: rgb(0, 179, 211)
+  }
+  .booking-left {
+    flex-basis: 100%;
+    min-width: 150px;
+  }
+  .booking-image {
+    width: 100%;
+  }
+  .booking-image img{
+    height: 100%;
+    flex-shrink: 1;
+  }
+  .booking-right {
+    flex-basis: 90%;
+    min-width: 150px;
+  }
+
+  .show-content {
+    width: 90%;
+    
+  }
+}/* -----------------------------------------------------------------------------------------*/
+@media screen and (max-width: 800px) {
+  /* 800px以下に適用されるCSS */
+  .home-under {
+    justify-content: center;
+    p {
+      text-align: center;
+    }
+  }
+  .home-items {
+    max-width: 400px;
+  }
+  .home-item {
+    flex-basis: 160px;
+  }
+
+}/* -----------------------------------------------------------------------------------------*/
+@media screen and (max-width: 760px) {
+  /* 760px以下に適用されるCSS */
+
+  /* Header */
+  .login-user-name {
+    display: none;
+  }
+
+  /* home.html.erb */
+  .home-top-left {
+
+    width: 75%;
+  }
+  .home-top-right {
+    display:none;
+  }
+  .home-item {
+    margin-top: 20px;
+  }
+  .home-items {
+    justify-content: space-around;
+  }
+
+  /* search.html.erb */
+  .search-content a {
+    width: 50%;
+    max-width: 50%;
+  }
+}
+/* ------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 520px) {
+  /* 520px以下に適用されるCSS */
+  .search-content a {
+  width: 100%;
+  max-width: 100%;
+  min-width: 80px;
+  }
+
+  .show-ul {
+    flex-wrap: wrap;
+  }
+}
+
+  
+/* ------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 400px) {
+  /* 480px以下に適用されるCSS */
+  /* Header */
+  .header-left {
+    display: none;
+  }
+
+  /* home.html.erb */
+  .home-top-left {
+
+    width: 90%;
+    min-width: 0px;
+  }
+  .home-item {
+    max-width: 180px;
+    height: 160px;
+  }
+
+  
+}

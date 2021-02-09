@@ -1,0 +1,31 @@
+<h1><%= @text %></h1>
+<%= form_with model: @user, url: @url, local: true do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+  <% if  controller_name == 'registrations' %>
+    <div class="field">
+      <div class="required">必須</div>
+      <%= f.text_field :name, class:"form-field margin-top-10", placeholder: "名前" %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="required">必須</div>
+    <%= f.email_field :email, class:"form-field margin-top-10", placeholder:"メールアドレス" %>
+  </div>
+  
+  <div class="field">
+    <div class="required">必須</div>
+    <%= f.password_field :password, class:"form-field margin-top-10", placeholder:"パスワード" %>
+  </div>
+  
+  <% if  controller_name == 'registrations' %>
+    <div class="field">
+      <div class="required">必須</div>
+      <%= f.password_field :password_confirmation, class:"form-field margin-top-10", placeholder:"パスワード確認" %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit @text, class:"original-btn" %>
+  </div>
+<% end %>

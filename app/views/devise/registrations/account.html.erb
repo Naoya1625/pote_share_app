@@ -1,0 +1,39 @@
+
+<div class="setting-wrap">
+  <div class="setting-left">
+    <div class="setting-left-content">
+      <ul>
+        <li><%= link_to t('.account'), users_account_path, id:"setting-toggle" %></li>
+        <li><%= link_to t('.profile'), users_profile_url, class:"select col-blue" %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="setting-right">
+    <div class="setting-right-content setting-right-account">
+        <ul>
+
+          <li class="border-bottom-gray" id="setting-title">
+            <span><%= t('.account') %></span>
+            <span></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.email') %></span>
+            <span><%= current_user.email %></span>
+          </li>
+
+          <li class="border-bottom-gray font-bold">
+            <span><%= t('.password') %></span>
+            <span><%= "*" * 10 %></span>
+          </li>
+
+          <li id="setting-submit-btn">
+            <span><%= link_to t('.edit'), edit_user_registration_path, class:"submit-btn-account col-white" %></span>
+            <span></span>
+          </li>
+
+        </ul>
+    </div>  
+  </div>
+

@@ -1,0 +1,34 @@
+<div class="show-wrap">
+  <div class="show-content">
+    <div class="show-row">
+      <ul class="show-ul border-bottom-gray">
+        <li><%= t('.reserved_room') %></li>
+        <li><%= @reservation.reserved_room.room_name %></li>
+      </ul>
+    </div>
+
+    <div class="show-row">
+      <ul class="show-ul border-bottom-gray">
+        <li><%= t('.start_date') %></li>
+        <li><%= @reservation.start_date %></li>
+      </ul>
+    </div>
+
+
+    <div class="show-row">
+      <ul class="show-ul border-bottom-gray">
+        <li><%= t('.end_date') %></li>
+        <li><%= @reservation.end_date %></li>
+      </ul>
+    </div>
+
+
+    <div class="show-row">
+      <ul class="show-ul">
+        <li><%= t('.amount') %></li>
+        <li><%= "#{@reservation.amount}#{t('.unit')}" %></li>
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="password-form-wrap">
+  <div class="password-wrap">
+    <h3><%= t('.edit_account') %></h3>
+ 
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="password-edit-item">
+        <%= f.label :email, t('.email'), class:"password-edit-label" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"password-form", placeholder: t('.please_enter_email') %>
+      </div>
+
+      <div class="password-edit-item">
+        <%= f.label :password, t('.after_password') %> <i>( <%= t('.leave_blank_if_you_do_not_want_to_change_it') %> )</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"password-form" %>
+
+      </div>
+
+      <div class="password-edit-item">
+        <%= f.label :password_confirmation, t('.confirmation_password') %> <i>( <%= t('.leave_blank_if_you_do_not_want_to_change_it') %> )</i><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"password-form" %>
+      </div>
+
+      <div class="password-edit-item">
+        <%= f.label :current_password %> <i></i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"password-form", placeholder: t('.please_enter_your_current_password') %>
+      </div>
+
+      <div class="actions password-edit-btn">
+        <%= f.submit t('.update') %>
+      </div>
+    <% end %>
+    <div class="password-edit-btn">
+      <%= link_to t('.back'), :back %>
+    </div>
+  </div>
+</div>

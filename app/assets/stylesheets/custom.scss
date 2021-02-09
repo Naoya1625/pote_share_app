@@ -1,0 +1,990 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* common ----------------------------------------*/
+html {
+  width: 100%;
+}
+body {
+  margin: 0;
+  width: 100%;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 130px;/*←footerの高さ*/
+  .wrap { 
+    height: 100%;
+  }
+}
+a:hover {
+  text-decoration: none !important;
+}
+.col-blue:hover {
+  color: rgb(0, 179, 211) !important;
+}
+.col-white:hover {
+  color: white !important;
+}
+
+li {
+  list-style: none;
+}
+.container {
+  text-align: center;
+}
+.left-justified {
+  text-align: left;
+}
+#full-width {
+  width: 100%;
+}
+.text-area-field {
+  vertical-align: top;
+
+  textarea {
+    height: 130px;
+    padding: 10px;
+  }
+}
+.round-image img {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  80px;       /* ※縦横を同値に */
+  height: 80px;       /* ※縦横を同値に */
+}
+.header-round-image {
+  width:  50px;       /* ※縦横を同値に */
+  height: 50px;       /* ※縦横を同値に */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+
+/* header ----------------------------------------*/
+header {
+  border: 1px solid black;
+  height: 60px;
+  background-color: black;
+  display: flex;
+}
+.header-left {
+  display: flex;
+  height: 100%;
+  width: 540px;
+
+}
+.header-logo {
+  display: flex;
+  height: 100%;
+}
+.search-form {
+  border: none;
+  width: 160px;
+  height: 100%;
+}
+.header-form {
+  display: flex;
+}
+.header-search-area, .header-search-keyword {
+  /* レスポンシブで小さいサイズの時非表示にする */
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  width: 160px;
+  margin-right: 4px;
+  input {
+    height:30px;
+
+    padding-left: 24px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  i {
+    margin-left: 6px;
+    position: absolute;
+    font-size: 18px;
+  }
+}
+.header-search-keyword {
+  /* レスポンシブで小さいサイズの時非表示にする */
+  display: flex;
+  height: 100%;
+}
+.hidden_submit {
+  display: none;
+}
+
+/* footer ----------------------------------------*/
+footer {
+  display: block;
+  background-color: black;
+  height: 130px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px; /* footerの高さの分だけ下に下げる */
+}
+.footer-wrap {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+}
+
+/*  ----------------------------------------*/
+
+.header-right {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  align-items: center;
+  margin-left: auto;
+}
+.login-user-name{
+  display: inline-block;
+  color: white;
+  margin-right: 10px;
+}
+.user-icon {
+  color: gray;
+  font-size: 40px;
+  margin-right: 50px;
+}
+.header-user-image {
+  margin-right: 60px;
+}
+.dropdown {
+  display: inline-block;
+  i {
+      font-size: 56px;
+  }
+}
+.link {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 30px;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  li {
+    display: flex;
+  }
+}
+.login-link{
+  border: 1px solid rgb(0, 110, 236);
+  background-color: rgb(0, 174, 255);
+  &:hover {
+    background-color: rgb(0, 81, 255);
+    color: white;
+  }
+}
+.registration-link{
+  border: 1px solid rgb(107, 107, 107);
+  background-color: rgb(148, 148, 148);
+  &:hover {
+    background-color: rgb(68, 68, 68);
+    color: white;
+  }
+}
+/* forms ----------------------------------------*/
+.form-wrap {
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 60px auto;
+  padding: 30px 60px;
+  text-align: center;
+  max-width: 700px;
+  h1, a {
+    font-size: 16px;
+  }
+}
+.required {
+  color: white;
+  background-color: rgb(255, 102, 0);  
+  display: block;
+  height: 24px;
+  margin-top: 18px;
+  padding: 2px 3px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.required-new, .required-profile {
+  display: flex;
+  color: white;
+  align-items: center;
+  height: 20px;
+  font-size: 10px;
+  padding: 1px 3px;
+  border-radius: 5px;
+  margin-left: 6px;
+  background-color: rgb(255, 102, 0);  
+}
+.password-form-wrap {
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 30px;
+  label, i {
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+.password-wrap {
+  border: 1px solid rgb(221, 221, 221);
+  width:460px;
+  margin: 0 auto;
+  padding: 0px 90px 30px 90px;
+  border-radius: 5px;;
+
+  input {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    height: 28px;
+    margin-bottom: 10px;
+  }
+}
+.password-form {
+  width: 100%;
+}
+.password-edit-label {
+  font-size:14px;
+}
+.field {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+}
+.form-field {
+  font-size: 16px;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 0px 8px;
+}
+.input-file-field {
+  margin-bottom: 20px;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+/* btn ----------------------------------------*/
+.original-btn {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(74, 172, 252);
+  width: 350px;
+  padding: 8px 0px;
+  margin: 20px 0px;
+}
+.submit-btn-profile ,.submit-btn-booking {
+  display: block;
+  width: 90%;
+  color: white;
+  background-color: rgb(83, 178, 255);
+  border-radius: 5px;
+  border: none;
+  height:40px;
+}
+.booking-signin-btn {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color:rgb(83, 178, 255);
+  height: 40px;
+  border-radius: 5px;
+  &:hover {
+    color: white;
+    background-color: rgb(46, 161, 255)
+  }
+
+}
+.submit-btn-account {
+  color: white;
+  background-color: rgb(83, 178, 255);
+  width:90%;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+#setting-submit-btn { 
+  /* setting-pageのsubmit-btnの共通のpadding-bottomを打ち消すため */
+  padding-bottom: 0px; 
+}
+.password-edit-btn {
+  border-radius: 5px;
+  width: 100%;
+  height: 28px;
+  input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(83, 178, 255);
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(83, 178, 255);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 100%;
+    transition: background-color 0.4s;
+  }
+  a:hover {
+    background-color: grey;
+  }
+}
+.confirm-btn {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+.confirm-submit-btn {
+  background-color: rgb(83, 178, 255);
+  margin-top: 20px;
+  transition: background-color 0.4s;
+}
+.confirm-submit-btn:hover {
+  background-color: rgb(26, 145, 243);
+
+}
+.confirm-back-btn {
+  background-color: rgb(168, 167, 167);
+  transition: background-color 0.4s;
+  margin-top: 10px;
+}
+.confirm-back-btn:hover {
+    background-color: gray;;
+}
+/* alert ----------------------------------------*/
+.notification {
+  width: 100%;
+  top: 0px;
+  background-color: rgb(205, 108, 63);
+  max-height: 30px;
+  .alert {
+    font-size: 10px;
+  }
+}
+#error_explanation {
+  color: rgb(250, 153, 153);
+  display: flex;
+  align-items: center;
+  h2 { 
+    font-size: 20px;
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    align-items: center;
+  }
+  li {
+    justify-content: center;
+    width: 100%;
+    padding: 2px 0px;
+  }
+}
+
+
+/* Setting-Right ----------------------------------------*/
+.setting-wrap {
+  display: flex;   /*並列になる*/
+  flex-wrap: wrap;  /*直下が折り返す*/
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.setting-right {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-top: 30px;
+  background-color: rgb(236, 250, 250);
+}
+#setting-title {
+  padding-top:0px;
+  padding-left: 0px;
+  font-size: 18px;
+}
+.setting-right-content, .setting-right-new {
+  margin-bottom: auto;
+  padding: 10px;
+  border: 1px solid rgb(221, 221, 221); /* 仮 */
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 80%;
+  display: flex;
+  flex-basis: 500px;
+  flex-grow: 0.3;
+  background-color:white;
+
+  ul {
+    padding-left: 0px;
+    width: 100%;
+  }
+  li {
+    display: flex;   /*並列になる*/
+    flex-wrap: wrap;  /*直下が折り返す*/
+
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+  }
+  form {
+    width: 100%;
+  }
+  input[type="text"],textarea {   /*入力フォーム*/
+    width: 100%;
+    box-sizing: border-box;   
+  }
+  textarea {
+    height: 100px;
+  }
+  ul span:first-of-type {    /*見出し*/
+    flex-basis: 150px;
+    display: flex;
+  }
+  ul span:nth-of-type(2) {
+    flex-basis: 200px;
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+#setting-user-image {
+  padding-bottom: 10px;
+
+  i,img{
+    margin: 0 auto;
+    font-size: 50px;
+  }
+} 
+.setting-right-new { margin-bottom: 30%;}
+.setting-right-account { margin-bottom: 60%;}
+.setting-right-profile { margin-bottom: 40%;}
+/* setting-Left ----------------------------------------*/
+.setting-left {
+  border-right: 1px solid rgb(221, 221, 221);
+  box-sizing: border-box;
+  width: 20%;
+  display: flex;
+}
+#setting-toggle {     /* 選択中のリンク */
+  border-right: 3px solid rgb(0, 179, 211);
+  color: rgb(0, 179, 211)
+}
+.setting-left-content {
+  width: 100%;
+  padding-top: 50px;
+
+  ul {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+
+  }
+  li {
+    width:90%;
+    height: 50px;
+
+  }
+  a {
+    color: black;
+    display: block;
+    height: 100%;
+    padding-top:14px;
+    width: 100%;
+  }
+}
+
+/* booking --------------------------------------------*/
+.booking-wrap {
+  width: 100%;
+}
+.booking-content {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 10px;
+  max-width: 1000px;
+}
+.booking-left {
+  box-sizing: border-box;
+  width: 70%;
+  padding: 10px;
+  flex-shrink: 0;
+  flex-basis: 600px;
+}
+.booking-right{
+  flex-grow: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  width: 30%;
+  padding: 10px;
+}
+.booking-image {
+  text-align: center;
+  height: 410px;
+}
+.booking-details {
+  display: grid;
+  grid-template-rows: 50px 50px 60px;
+  grid-template-columns: 100px 1fr;
+}
+.details-icon {
+  grid-row: 1/3;
+  grid-column: 1/2;
+  text-align: center;
+  position: relative;
+
+  img, i {
+    color: gray;
+    font-size: 60px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+  }
+}
+.details-name {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  font-weight: bold;
+
+  p {
+    line-height: 50px;
+  }
+}
+.details-address {
+  grid-row: 2/3;
+  grid-column: 2/3;
+
+  p {
+    line-height: 50px;
+  }
+}
+.details-introduction {
+  grid-row: 3/4;
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+  /* レスポンシブの時にこのdivの高さを広げないと長文だったらはみだしてしまう(grid-template-rows) */
+  p {
+    margin: 15px 10px;
+  }
+}
+
+.booking-form{
+  border: 1px solid gray;
+}
+#booking-form {
+  width: 100%;
+  border-radius: 0px;
+  
+  li {
+    padding: 15px 0px;
+  }
+  input {
+    width: 100%;
+    border:1px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    height:35px;
+    padding-left: 10px;
+  }
+}
+
+/* 予約済みルーム一覧 & 登録済みルーム一覧 ----------------------------------------*/
+.res-wrap, .reg-wrap{
+  width: 100%;
+  padding: 20px 10px;
+}
+.res-room-wrap, .reg-room-wrap {
+  max-width: 1000px;
+  min-width: 700px;
+  min-width: 500px;
+  padding-left: 30px;
+  h4 {
+    margin-bottom:20px;
+  }
+}
+
+.res-content, .reg-content {
+  table {
+    width: 100%;
+  }
+  th {
+    font-size: 10px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0px;
+    border-top: 1px solid rgb(221,221,221);
+    border-bottom:1px solid rgb(221,221,221);
+  }
+  td {
+    height: 100px;
+    box-sizing: border-box;
+    padding:5px;
+    border-bottom: 1px solid rgb(221,221,221);
+  }
+  table tr:nth-child(even) td {
+    background-color: rgb(245, 245, 245); /* tableの偶数行にのみ背景色指定 */
+  }
+}
+/* 予約済みルーム */
+.res-room-image {
+  width: 15%;
+  text-align: center;
+}
+.res-room-name {
+  width: 15%;
+  font-weight: bold;
+  text-align: center;
+}
+.res-room-introduction {
+  width: 20%;
+  font-size: 12px;
+  text-align: center;
+}
+.res-amount, .res-start, .res-end {
+  width: 10%;
+  text-align: center;
+}
+.res-create-date{
+  width: 20%;
+  text-align: center;
+}
+
+/*登録済みルーム*/
+.reg-room-image {
+  width: 25%;
+  text-align: center;
+}
+.reg-room-name {
+  width: 15%;
+  font-weight: bold;
+  text-align: center;
+}
+.reg-room-introduction {
+  width: 30%;
+  font-size: 12px;
+  text-align: center;
+}
+.reg-price {
+  width: 10%;
+  text-align: center;
+}
+.reg-create-date{
+  width: 20%;
+  text-align: center;
+}
+
+/* confirmation ------------------------------*/
+.confirmation-wrap {
+  width: 100%;
+
+}
+.confirm-content {
+  width: 400px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
+  margin: 30px auto;
+  padding: 4px 16px 16px 16px;
+  h4, h5{
+    font-weight: normal;
+  }
+  h4 {
+    border-bottom: 1px solid rgb(221,221,221);
+    padding-bottom:10px;
+  }
+}
+.confirm-details {
+  font-size: 12px;
+  p {
+    padding: 8px 0px;
+    margin-bottom: 0px;
+  }
+  input[type="text"]{
+    width: 100%;
+    border-radius: 5px;;
+    background-color: rgb(233, 232, 232);
+    border: 1px solid rgb(160, 159, 159);
+    height: 30px;
+    padding-left:10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* notification ----------------------------------------*/
+.alert {
+  height: 8px;
+  font-size: 8px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* show -----------------------------------------------*/
+.show-wrap {
+  width: 100%;
+  height: 780px;
+  background-color: rgb(243, 241, 241);
+  padding-top: 40px;
+}
+.show-content {
+  background-color: white;
+  width: 70%;
+  max-width: 700px;
+  margin: 0px auto;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.show-ul {
+  padding-left: 0px;
+  display: flex;
+  padding: 10px 20px;
+  
+}
+.show-ul li:nth-of-type(1) {
+  flex-basis: 140px;
+  font-weight: bold;
+}
+.show-ul li:nth-of-type(2) {
+  display: flex;
+  flex-basis: 200px;
+}
+
+
+
+/* rooms/search--------------------------------------- */
+.search-wrap {
+  width: 100%;
+  padding: 20px;
+}
+.search-content {
+  width: 100%; 
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  h4 {
+    padding-left: 10px;
+    width: 100%;
+
+  }
+  a {
+    box-sizing: border-box;
+    width: 25%;
+    max-width: 25%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+.searching-words {
+  color: rgb(247, 171, 184)
+}
+.search-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  max-height: 200px;
+}
+.search-item {
+  padding: 0px 10px;
+  min-width: 250px;
+  flex-shrink: 0;
+}
+.search-item-detail {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 10px;
+  color: black;
+  h5, p {
+    width: 100%;
+  }
+  h5 {
+    color: gray;
+  }
+}
+.search-address {
+  font-weight: bold;
+}
+.search-inner {
+  border: 1px solid rgb(211, 211, 211);
+  background-color: rgb(245, 245, 245);
+  padding: 10px 0px;
+  min-height: 300px;
+}
+.search-price {
+  text-align: right;
+}
+
+
+/* home-page ------------------------------------------*/
+
+.home-top {
+  height: 500px;
+  background-color: rgb(184, 184, 184);
+  display: flex;
+  justify-content: center;
+  background-image: url(image-home-top.jpg);    /* 背景画像指定 */
+  background-size:  cover;   
+}
+.home-top-left {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  max-width: 440px;
+  min-width: 340px; /* 中身設定後に設定する！中身が崩れないような感じで */
+}
+.home-top-right {
+  width: 45%;
+  max-width: 440px;
+}
+.home-searchbox {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;;
+  p {
+    width: 100%;
+    font-size: 22px;
+    padding: 0px;
+  }
+}
+.home-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  label {
+    width: 100%;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  input {
+    width: 100%;
+
+    border-radius: 5px;
+    padding: 6px 10px;
+    border: 1px solid rgb(221, 221, 221);
+    margin-bottom: 12px;
+  }
+  input[type="submit"] {
+    padding: 6px;
+    text-align: center;
+    color: white;
+    background-color: rgb(83, 178, 255);
+    border: 1px solid rgb(0, 132, 255);
+    &:hover {
+      background-color :rgb(46, 160, 253);
+    }
+  }
+}
+.home-under-wrap {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+}
+.home-under {
+  display: flex;
+  flex-wrap: wrap;
+  width: 820px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  p {
+    width:100%;
+    margin-left: 10px;
+    margin-bottom:30px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+.home-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.home-item {
+  display: flex;
+  box-sizing: border-box;
+  height: 320px;
+  border-radius: 5px;
+  flex-basis: 180px;
+
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  span {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+}
+.item-image {
+  background-size:  cover;   
+  background-position: center center;
+}
+#tokyo {
+  background-image: url(img_tokyo.jpg);    /* 背景画像指定 */
+}
+#osaka {
+  background-image: url(img_osaka.jpg);    /* 背景画像指定 */
+}
+#kyoto {
+  background-image: url(img_kyoto.jpg);    /* 背景画像指定 */
+}
+#sapporo {
+  background-image: url(img_sapporo.jpg);    /* 背景画像指定 */
+}
+
+
+/* ちょい足しcss ----------------------------------------*/
+.border-bottom-gray {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+.font-bold span:first-of-type {
+  font-weight: bold;
+}
+

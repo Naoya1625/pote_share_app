@@ -3,6 +3,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+# ログイン機能
+gem 'devise'
+#ページネーション
+gem 'kaminari'
+gem 'pry-rails'
+# 日本語化
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'
+gem 'bootstrap-sass', '3.4.1'
+
+gem 'active_storage_validations', '0.8.2'
+# 画像リサイズ
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
@@ -13,8 +28,6 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -31,6 +44,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 3.6.0"
+  gem "factory_bot_rails", "~> 4.10.0"
 end
 
 group :development do
@@ -40,11 +55,18 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
+  #debug効率化
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  gem 'spring-commands-rspec'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '~> 2.15.2'
+  gem 'launchy', '~> 2.4.3'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

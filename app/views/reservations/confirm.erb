@@ -1,0 +1,27 @@
+<div class="confirm-wrap">
+  <div class="confirm-content">
+    <h4><%= t('.confirmation_of_reservation_details') %></h4>
+    <h5>¥ <%= @amount %> / <%= t('.day') %></h5>
+    <div class="confirm-details">
+      <%= form_with model: @reservation, url: reserve_path, method: :post, local: true do |f| %>
+        <%= f.hidden_field :reserving_user_id, :value => current_user.id %>
+        <%= f.hidden_field :reserved_room_id, :value => @room.id %>
+        <%= f.hidden_field :number_of_people, :value => @reservation.number_of_people %>
+
+        <p><%= t('.start_date') %></p>
+        <%= f.text_field :start_date, :value => @reservation.start_date, readonly: true %>
+        <p><%= t('.end_date') %></p>
+        <%= f.text_field :end_date, :value => @reservation.end_date, readonly: true %>
+        <p class="border-bottom-gray"><%= t('.days_of_use') %> : <%= @reservation.calculate_number_of_date %><%= t('.day')%></p>
+        <p class="border-bottom-gray"><%= t('.number_of_people') %> : <%= @reservation.number_of_people %><%= t('.person') %></p>
+        <p><%= t('.amount') %></p>
+        <%= f.text_field :amount, :value => @amount, readonly: true %>
+        <p class="border-bottom-gray"><%= t('.if_you_are_satisfied_with_the_above_contents_please_press_confirm_reservation') %></p>
+
+        <%= f.submit t('.confirm_reservation'), class:"confirm-btn confirm-submit-btn" %>
+        <%= f.submit t('.back'), name: 'back', class:"confirm-btn confirm-back-btn" %>
+
+      <% end %>
+
+    </div>
+

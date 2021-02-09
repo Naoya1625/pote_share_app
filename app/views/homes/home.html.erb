@@ -1,0 +1,53 @@
+<div class="home-wrap">
+  <div class="home-top">
+
+    <div class="home-top-left">
+      <div class="home-searchbox">
+        <p><%= t('.take_a_trip_you_have_never_experienced_with_potepan_share') %></p>
+
+        <%= form_with(scope: :search, url: rooms_search_path, method: :get, local: true, class:"home-form") do |f| %>
+            <%= f.label t('.address') %>
+            <%= f.text_field :address, class:"home-search-form", placeholder: t('.tokyo') %>
+
+          <%= f.submit t('.search'), class:"btn home-submit-btn" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="home-top-right">
+
+    </div>
+  </div>
+
+  <div class="home-under-wrap">
+    <div class="home-under">
+      <p><%= t('.recommended_area') %></p>
+      <div class="home-items">
+        <div class="home-item item-image" id="tokyo">
+          <%= link_to rooms_search_path(search: {address: t(".tokyo")}) do %>
+            <span><%= t('.tokyo') %></span>
+          <%end%>
+        </div>
+
+        <div class="home-item item-image" id="osaka">
+          <%= link_to rooms_search_path(search: {address: t(".osaka")}) do %>
+            <span><%= t('.osaka') %></span>
+          <%end%>
+        </div>
+
+        <div class="home-item item-image" id="kyoto">
+          <%= link_to rooms_search_path(search: {address: t(".kyoto")}) do %>
+            <span><%= t('.kyoto') %></span>
+          <%end%>
+        </div>
+
+        <div class="home-item item-image" id="sapporo">
+          <%= link_to rooms_search_path(search: {address: t(".sapporo")}) do %>
+            <span><%= t('.sapporo') %></span>
+          <%end%>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

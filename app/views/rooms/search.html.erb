@@ -1,0 +1,29 @@
+<div class="search-wrap">
+  <div class="search-content">
+    <h4><%= "#{t('.search_result')} : #{@rooms.count}#{t('.case')}" %></h4>
+    <% if @searching_address&.present? %>
+      <h4 class="searching-words"><%= "#{t('.searching_address')} :「 #{@searching_address} 」" %></h4>
+    <% end %>
+    <% if @searching_keywords&.present?  %>
+      <h4 class="searching-words"><%= "#{t('.searching_keywords')} :「 #{@searching_keywords} 」" %></h4>
+    <% end %>
+
+    <% @rooms.each do |room| %>
+        <%= link_to booking_path(room) do %>
+          <div class="search-item">
+            <div class="search-inner">
+                <div class="search-image">
+                  <%= image_tag room.display_image(220,200) %>
+                </div>
+                <div class="search-item-detail">
+                  <h5><%= room.room_name %></h5>
+                  <p class="search-address"><%= room.address %></p>
+                  <p class="search-price">¥ <%= room.price_per_person_per_night %></p>
+                </div>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+

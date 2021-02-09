@@ -1,24 +1,44 @@
-# README
+README
+Rails実践課題2つ目の「宿泊予約アプリ」です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリでは、
+ユーザー登録、ログイン、ログアウト
+ルームの登録、確認、編集、削除
+他のユーザが登録したルームの予約、全ての予約確認を行うことができます。
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+-----アプリを動かす方法-----
 
-* Database creation
+・本リポジトリをクローンし、該当のディレクトリへ移動します。
 
-* Database initialization
+$ git clone -b develop https://github.com/Naoya1625/poteshare_ptpn.git
 
-* How to run the test suite
+$ cd poteshare_fin
 
-* Services (job queues, cache servers, search engines, etc.)
+・必要なパッケージをインストールし、bundle installします。
 
-* Deployment instructions
+$ bundle install
 
-* ...
+・yarnをインストールします。
+
+$ yarn install --check-files
+
+・データベースを移行します。
+
+$ rails db:migrate
+
+・サンプルデータを設定します。
+
+$ rails db:seed
+
+・テストを実行して、正しく動作していることを確認します。
+
+$ bin/rspec
+
+・アプリを実行する準備が整いました。
+
+$ rails server
+
+
